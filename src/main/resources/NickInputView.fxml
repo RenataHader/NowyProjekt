@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.NickInputController"
+      alignment="CENTER" spacing="10.0">
+
+    <Label fx:id="titleLabel" text="Podaj nick" style="-fx-font-size: 16px;" />
+    <TextField fx:id="nicknameField" promptText="Twój nick"/>
+
+    <HBox fx:id="playerCountBox" spacing="10">
+        <Label text="Liczba graczy:"/>
+        <TextField fx:id="playerCountField"/>
+    </HBox>
+
+    <Button text="Dołącz do gry" onAction="#submit"/>
+
+</VBox>

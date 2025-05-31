@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.CharadesGuessController"
+      spacing="10" alignment="CENTER" prefWidth="600" prefHeight="500">
+
+    <Label fx:id="resultLabel" text="Zgadnij rysunek gracza:" style="-fx-font-size: 16px;"/>
+
+    <ImageView fx:id="drawingImage" fitWidth="400" fitHeight="300" preserveRatio="true"
+               style="-fx-border-color: black;"/>
+
+    <Label text="Twoja odpowiedź:"/>
+    <TextField fx:id="guessField" prefWidth="300"/>
+    <Button text="Zgadnij" onAction="#submitGuess" minWidth="100"/>
+
+</VBox>

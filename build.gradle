@@ -1,0 +1,56 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
+    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
+}
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing' ]
+}
+
+application {
+    mainClass = 'org.example.Main'
+}
+
+tasks.register('runClient1', JavaExec) {
+    group = 'application'
+    description = 'Uruchamia pierwszego klienta gry'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.example.Main'
+    jvmArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+
+tasks.register('runClient2', JavaExec) {
+    group = 'application'
+    description = 'Uruchamia drugiego klienta gry'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.example.Main'
+    jvmArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+
+tasks.register('runClient3', JavaExec) {
+    group = 'application'
+    description = 'Uruchamia trzeciego klienta gry'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.example.Main'
+    jvmArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}

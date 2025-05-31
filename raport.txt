@@ -1,0 +1,305 @@
+2025-05-30T19:58:30.743104700 [INFO] Utworzono gracza: Gracz 1
+2025-05-30T19:58:32.833159600 [INFO] Utworzono gracza: Gracz 2
+2025-05-30T19:58:46.620885700 [INFO] Gracz Gracz 1 dołączył do gry: MEMORY
+2025-05-30T19:58:46.621882900 [INFO] Gracz Gracz 2 dołączył do gry: MEMORY
+2025-05-30T19:58:47.282110500 [INFO] Gracz Gracz 1 dołączył do gry: MEMORY
+2025-05-30T19:58:47.282110500 [INFO] Gracz Gracz 2 dołączył do gry: MEMORY
+2025-05-30T20:38:18.417768400 Utworzono gracza: Gracz_1dc4c
+2025-05-30T20:38:23.370739600 Utworzono gracza: Gracz_a9a94
+2025-05-30T20:38:26.368501 Utworzono gracza: Gracz_9c0a1
+2025-05-30T20:38:26.810935600 Utworzono gracza: Gracz_6bc7a
+2025-05-30T20:38:36.612089200 Gracz Gracz_1dc4c dołączył do gry: MEMORY
+2025-05-30T20:38:43.599199 Gracz Gracz_6bc7a dołączył do gry: MEMORY
+2025-05-30T20:38:44.664296900 Gracz Gracz_9c0a1 dołączył do gry: CHARADES
+2025-05-30T20:38:57.093292700 Utworzono gracza: Gracz_1ae00
+2025-05-30T20:39:14.663317100 Utworzono gracza: Gracz_ec2ea
+2025-05-30T20:39:17.381200200 Utworzono gracza: Gracz_dbe0a
+2025-05-30T20:39:19.885276 Gracz Gracz_dbe0a dołączył do gry: MEMORY
+2025-05-30T20:40:45.428969300 Utworzono gracza: Gracz_9e1e0
+2025-05-30T20:40:58.956228700 Utworzono gracza: Gracz_e95b9
+2025-05-30T20:41:02.716496100 Utworzono gracza: Gracz_e3d54
+2025-05-30T20:41:03.557452500 Utworzono gracza: Gracz_4a026
+2025-05-30T20:41:06.737629400 Gracz Gracz_9e1e0 dołączył do gry: MEMORY
+2025-05-30T20:41:11.425848400 Gracz Gracz_4a026 dołączył do gry: MEMORY
+2025-05-30T20:41:36.145189800 Utworzono gracza: Gracz_8491e
+2025-05-30T20:41:38.300757800 Utworzono gracza: Gracz_2a76c
+2025-05-30T20:41:41.053584400 Gracz Gracz_2a76c dołączył do gry: MEMORY
+2025-05-30T20:41:52.135767800 Utworzono gracza: Gracz_1d604
+2025-05-30T20:41:59.339285400 Utworzono gracza: Gracz_ae233
+2025-05-30T20:42:04.253169300 Gracz Gracz_ae233 dołączył do gry: CHARADES
+2025-05-30T20:42:19.371578300 Utworzono gracza: Gracz_a37f1
+2025-05-30T20:42:20.884396200 Utworzono gracza: Gracz_ffcd1
+2025-05-30T20:42:22.281602200 Gracz Gracz_ffcd1 dołączył do gry: MEMORY
+2025-05-30 21:26:17 Utworzono gracza: Gracz_3ced5
+2025-05-30 21:26:19 Utworzono gracza: Gracz_2cc5d
+2025-05-30 21:26:24 Gracz Gracz_2cc5d dołączył do gry: MEMORY
+2025-05-30 21:31:48 Utworzono gracza: Gracz_6af18
+2025-05-30 21:31:50 Utworzono gracza: Gracz_97799
+2025-05-30 21:31:52 Gracz Gracz_6af18 dołączył do gry: MEMORY
+2025-05-30 21:31:54 Gracz Gracz_97799 dołączył do gry: MEMORY
+2025-05-30 21:31:54 Gracz Gracz_6af18 dołączył do gry: MEMORY
+2025-05-30 21:42:58 Utworzono gracza: Gracz_ebbe6
+2025-05-30 21:43:01 Utworzono gracza: Gracz_1847b
+2025-05-30 21:43:04 Gracz Gracz_ebbe6 dołączył do gry: MEMORY
+2025-05-30 21:43:05 Gracz Gracz_ebbe6 dołączył do gry: MEMORY
+2025-05-30 21:43:05 Gracz Gracz_1847b dołączył do gry: MEMORY
+2025-05-30 21:49:55 Utworzono gracza: Gracz_65387
+2025-05-30 21:49:59 Utworzono gracza: Gracz_7cc3e
+2025-05-30 21:50:04 Utworzono gracza: Gracz_cff2d
+2025-05-30 21:50:11 Gracz Gracz_65387 dołączył do gry: MEMORY
+2025-05-30 21:50:11 Gracz Gracz_7cc3e dołączył do gry: CHARADES
+2025-05-30 21:50:14 Gracz Gracz_65387 dołączył do gry: MEMORY
+2025-05-30 21:50:14 Gracz Gracz_cff2d dołączył do gry: MEMORY
+2025-05-30 21:50:36 Utworzono gracza: Gracz_b27bc
+2025-05-30 21:50:38 Gracz Gracz_7cc3e dołączył do gry: CHARADES
+2025-05-30 21:50:38 Gracz Gracz_b27bc dołączył do gry: CHARADES
+2025-05-30 21:54:00 Utworzono gracza: Gracz_64c23
+2025-05-30 21:54:08 Gracz Gracz_64c23 dołączył do gry: MEMORY
+2025-05-30 21:54:22 Utworzono gracza: Gracz_7ab44
+2025-05-30 21:54:24 Gracz Gracz_64c23 dołączył do gry: MEMORY
+2025-05-30 21:54:24 Gracz Gracz_7ab44 dołączył do gry: MEMORY
+2025-05-30 22:06:34 Utworzono gracza: Gracz_f114b
+2025-05-30 22:06:37 Gracz Gracz_f114b dołączył do gry: MEMORY
+2025-05-30 22:06:41 Utworzono gracza: Gracz_96dd1
+2025-05-30 22:06:42 Gracz Gracz_f114b dołączył do gry: MEMORY
+2025-05-30 22:06:42 Gracz Gracz_96dd1 dołączył do gry: MEMORY
+2025-05-30 22:13:17 Utworzono gracza: Gracz_5f0e9
+2025-05-30 22:13:19 Utworzono gracza: Gracz_3a1de
+2025-05-30 22:13:22 Gracz Gracz_5f0e9 dołączył do gry: MEMORY
+2025-05-30 22:13:23 Gracz Gracz_5f0e9 dołączył do gry: MEMORY
+2025-05-30 22:13:23 Gracz Gracz_3a1de dołączył do gry: MEMORY
+2025-05-30 22:21:12 Utworzono gracza: Gracz_ce7c1
+2025-05-30 22:21:14 Utworzono gracza: Gracz_53f04
+2025-05-30 22:21:23 Gracz Gracz_53f04 dołączył do gry: MEMORY
+2025-05-30 22:21:23 Gracz Gracz_ce7c1 dołączył do gry: MEMORY
+2025-05-30 23:15:29 Utworzono gracza: Gracz_fa72a
+2025-05-30 23:15:31 Utworzono gracza: Gracz_384c9
+2025-05-30 23:15:38 Utworzono gracza: Gracz_fce4c
+2025-05-30 23:15:44 Utworzono gracza: Gracz_50ddf
+2025-05-30 23:15:44 Gracz Gracz_fce4c dołączył do gry: MEMORY
+2025-05-30 23:15:44 Gracz Gracz_50ddf dołączył do gry: MEMORY
+2025-05-30 23:16:04 Utworzono gracza: Gracz_9af83
+2025-05-30 23:16:08 Utworzono gracza: Gracz_75d5e
+2025-05-30 23:16:15 Utworzono gracza: Gracz_de1ea
+2025-05-30 23:16:25 Utworzono gracza: Gracz_29614
+2025-05-30 23:16:30 Utworzono gracza: Gracz_5e81f
+2025-05-30 23:16:38 Utworzono gracza: Gracz_ebce2
+2025-05-30 23:16:40 Utworzono gracza: Gracz_0e284
+2025-05-30 23:16:59 Utworzono gracza: Gracz_f94fa
+2025-05-30 23:17:01 Utworzono gracza: Gracz_3aa65
+2025-05-30 23:17:15 Utworzono gracza: Gracz_06e96
+2025-05-30 23:17:25 Utworzono gracza: Gracz_3e067
+2025-05-30 23:17:34 Utworzono gracza: Gracz_50c91
+2025-05-30 23:17:34 Gracz Gracz_de1ea dołączył do gry: CHARADES
+2025-05-30 23:17:34 Gracz Gracz_5e81f dołączył do gry: CHARADES
+2025-05-30 23:17:34 Gracz Gracz_06e96 dołączył do gry: CHARADES
+2025-05-30 23:17:34 Gracz Gracz_3e067 dołączył do gry: CHARADES
+2025-05-30 23:17:34 Gracz Gracz_50c91 dołączył do gry: CHARADES
+2025-05-30 23:17:43 Utworzono gracza: Gracz_0b0e5
+2025-05-30 23:17:50 Utworzono gracza: Gracz_f53a9
+2025-05-30 23:18:21 Utworzono gracza: Gracz_bb823
+2025-05-30 23:18:23 Utworzono gracza: Gracz_58081
+2025-05-30 23:18:33 Utworzono gracza: Gracz_22217
+2025-05-30 23:18:34 Utworzono gracza: Gracz_bb435
+2025-05-30 23:18:34 Gracz Gracz_22217 dołączył do gry: MEMORY
+2025-05-30 23:18:34 Gracz Gracz_bb435 dołączył do gry: MEMORY
+2025-05-30 23:18:55 Utworzono gracza: Gracz_f5f28
+2025-05-30 23:18:59 Utworzono gracza: Gracz_a648b
+2025-05-30 23:19:08 Utworzono gracza: Gracz_7905f
+2025-05-30 23:19:16 Utworzono gracza: Gracz_a24b8
+2025-05-30 23:19:17 Utworzono gracza: Gracz_6d50a
+2025-05-30 23:28:49 Utworzono gracza: Gracz_f76ff
+2025-05-30 23:29:08 Utworzono gracza: Gracz_04441
+2025-05-30 23:29:10 Utworzono gracza: Gracz_23618
+2025-05-30 23:29:19 Utworzono gracza: Gracz_66bbb
+2025-05-30 23:29:26 Utworzono gracza: Gracz_bcbca
+2025-05-30 23:29:33 Utworzono gracza: Gracz_dae57
+2025-05-30 23:29:41 Utworzono gracza: Gracz_9ae67
+2025-05-30 23:29:41 Gracz Gracz_66bbb dołączył do gry: CHARADES
+2025-05-30 23:29:41 Gracz Gracz_bcbca dołączył do gry: CHARADES
+2025-05-30 23:29:41 Gracz Gracz_9ae67 dołączył do gry: CHARADES
+2025-05-30 23:30:26 Utworzono gracza: Gracz_86f9f
+2025-05-30 23:30:35 Utworzono gracza: Gracz_6a373
+2025-05-30 23:30:42 Utworzono gracza: Gracz_accda
+2025-05-30 23:30:50 Utworzono gracza: Gracz_f54f1
+2025-05-30 23:30:50 Gracz Gracz_6a373 dołączył do gry: CHARADES
+2025-05-30 23:30:50 Gracz Gracz_f54f1 dołączył do gry: CHARADES
+2025-05-30 23:36:53 Utworzono gracza: Gracz_e2a9c
+2025-05-30 23:36:56 Utworzono gracza: Gracz_fda01
+2025-05-30 23:36:57 Utworzono gracza: Gracz_bfd39
+2025-05-30 23:37:07 Utworzono gracza: Gracz_7d25a
+2025-05-30 23:37:12 Utworzono gracza: Gracz_a0dcd
+2025-05-30 23:37:16 Utworzono gracza: Gracz_78c26
+2025-05-30 23:37:16 Gracz Gracz_7d25a dołączył do gry: CHARADES
+2025-05-30 23:37:16 Gracz Gracz_a0dcd dołączył do gry: CHARADES
+2025-05-30 23:37:16 Gracz Gracz_78c26 dołączył do gry: CHARADES
+2025-05-31 00:20:09 Utworzono gracza: Gracz_9e39a
+2025-05-31 00:20:11 Utworzono gracza: Gracz_3a75b
+2025-05-31 00:20:20 Utworzono gracza: Gracz_b8c64
+2025-05-31 00:20:21 Utworzono gracza: Gracz_b002f
+2025-05-31 00:20:21 Gracz Gracz_b8c64 dołączył do gry: CHARADES
+2025-05-31 00:20:21 Gracz Gracz_b002f dołączył do gry: CHARADES
+2025-05-31 00:20:39 Utworzono gracza: Gracz_96d13
+2025-05-31 00:20:41 Utworzono gracza: Gracz_e6b10
+2025-05-31 00:20:49 Utworzono gracza: Gracz_64bd1
+2025-05-31 00:21:03 Utworzono gracza: Gracz_f2a17
+2025-05-31 00:21:07 Utworzono gracza: Gracz_6516c
+2025-05-31 00:21:14 Utworzono gracza: Gracz_a0a87
+2025-05-31 00:21:14 Gracz Gracz_f2a17 dołączył do gry: CHARADES
+2025-05-31 00:21:14 Gracz Gracz_6516c dołączył do gry: CHARADES
+2025-05-31 00:21:14 Gracz Gracz_a0a87 dołączył do gry: CHARADES
+2025-05-31 00:40:43 Utworzono gracza: Gracz_0064e
+2025-05-31 00:40:45 Utworzono gracza: Gracz_be202
+2025-05-31 00:40:52 Utworzono gracza: Gracz_3689b
+2025-05-31 00:40:58 Utworzono gracza: Gracz_a6c69
+2025-05-31 00:40:58 Gracz Gracz_3689b dołączył do gry: CHARADES
+2025-05-31 00:40:58 Gracz Gracz_a6c69 dołączył do gry: CHARADES
+2025-05-31 01:23:26 Utworzono gracza: Gracz_306bf
+2025-05-31 01:23:29 Utworzono gracza: Gracz_cd8c5
+2025-05-31 01:23:30 Utworzono gracza: Gracz_8db45
+2025-05-31 01:23:41 Utworzono gracza: Gracz_b61de
+2025-05-31 01:23:45 Utworzono gracza: Gracz_78ca4
+2025-05-31 01:23:50 Utworzono gracza: Gracz_2c73b
+2025-05-31 01:23:50 Gracz Gracz_b61de dołączył do gry: CHARADES
+2025-05-31 01:23:50 Gracz Gracz_78ca4 dołączył do gry: CHARADES
+2025-05-31 01:23:50 Gracz Gracz_2c73b dołączył do gry: CHARADES
+2025-05-31 01:47:46 Utworzono gracza: Gracz_8d831
+2025-05-31 01:47:56 Utworzono gracza: Gracz_dfc6e
+2025-05-31 01:47:58 Utworzono gracza: Gracz_67cb5
+2025-05-31 01:48:06 Utworzono gracza: Gracz_6e33a
+2025-05-31 01:48:55 Utworzono gracza: Gracz_bda2a
+2025-05-31 01:49:01 Utworzono gracza: Gracz_d0695
+2025-05-31 01:50:52 Utworzono gracza: Gracz_c06b9
+2025-05-31 01:51:01 Utworzono gracza: Gracz_557ed
+2025-05-31 01:51:02 Utworzono gracza: Gracz_8ad5f
+2025-05-31 01:51:04 Utworzono gracza: Gracz_370b9
+2025-05-31 01:51:08 Utworzono gracza: Gracz_cf947
+2025-05-31 01:51:15 Utworzono gracza: Gracz_57a24
+2025-05-31 01:51:15 Gracz Gracz_557ed dołączył do gry: CHARADES
+2025-05-31 01:51:15 Gracz Gracz_cf947 dołączył do gry: CHARADES
+2025-05-31 01:51:15 Gracz Gracz_57a24 dołączył do gry: CHARADES
+2025-05-31 01:57:48 Utworzono gracza: Gracz_8575a
+2025-05-31 01:57:51 Utworzono gracza: Gracz_52868
+2025-05-31 01:57:53 Utworzono gracza: Gracz_4e90e
+2025-05-31 01:57:58 Utworzono gracza: Gracz_4d500
+2025-05-31 01:57:58 Gracz Gracz_4e90e dołączył do gry: CHARADES
+2025-05-31 01:57:58 Gracz Gracz_4d500 dołączył do gry: CHARADES
+2025-05-31 02:03:03 Utworzono gracza: Gracz_f73ea
+2025-05-31 02:03:05 Utworzono gracza: Gracz_aa453
+2025-05-31 02:03:10 Utworzono gracza: Gracz_86466
+2025-05-31 02:03:14 Utworzono gracza: Gracz_06bcc
+2025-05-31 02:03:14 Gracz Gracz_86466 dołączył do gry: CHARADES
+2025-05-31 02:03:14 Gracz Gracz_06bcc dołączył do gry: CHARADES
+2025-05-31 02:06:19 Utworzono gracza: Gracz_cd8af
+2025-05-31 02:06:21 Utworzono gracza: Gracz_ebb61
+2025-05-31 02:06:31 Utworzono gracza: Gracz_16271
+2025-05-31 02:06:34 Utworzono gracza: Gracz_a1dc4
+2025-05-31 02:06:34 Gracz Gracz_16271 dołączył do gry: CHARADES
+2025-05-31 02:06:34 Gracz Gracz_a1dc4 dołączył do gry: CHARADES
+2025-05-31 02:09:09 Utworzono gracza: Gracz_3717c
+2025-05-31 02:09:16 Utworzono gracza: Gracz_1dc66
+2025-05-31 02:09:18 Utworzono gracza: Gracz_72c56
+2025-05-31 02:09:27 Utworzono gracza: Gracz_47e5c
+2025-05-31 02:09:27 Gracz Gracz_72c56 dołączył do gry: CHARADES
+2025-05-31 02:09:27 Gracz Gracz_47e5c dołączył do gry: CHARADES
+2025-05-31 02:12:57 Utworzono gracza: Gracz_7ef53
+2025-05-31 02:12:59 Utworzono gracza: Gracz_3fa49
+2025-05-31 02:13:04 Utworzono gracza: Gracz_0cc37
+2025-05-31 02:13:07 Utworzono gracza: Gracz_96216
+2025-05-31 02:13:07 Gracz Gracz_0cc37 dołączył do gry: CHARADES
+2025-05-31 02:13:07 Gracz Gracz_96216 dołączył do gry: CHARADES
+2025-05-31 02:14:25 Utworzono gracza: Gracz_7d98b
+2025-05-31 02:14:26 Utworzono gracza: Gracz_3ccfc
+2025-05-31 02:14:30 Utworzono gracza: Gracz_f4d05
+2025-05-31 02:14:34 Utworzono gracza: Gracz_a1d27
+2025-05-31 02:14:34 Gracz Gracz_f4d05 dołączył do gry: CHARADES
+2025-05-31 02:14:34 Gracz Gracz_a1d27 dołączył do gry: CHARADES
+2025-05-31 02:17:38 Utworzono gracza: Gracz_ee825
+2025-05-31 02:17:40 Utworzono gracza: Gracz_1e998
+2025-05-31 02:17:44 Utworzono gracza: Gracz_35201
+2025-05-31 02:17:48 Utworzono gracza: Gracz_87b5f
+2025-05-31 02:17:48 Gracz Gracz_35201 dołączył do gry: CHARADES
+2025-05-31 02:17:48 Gracz Gracz_87b5f dołączył do gry: CHARADES
+2025-05-31 02:18:39 Utworzono gracza: Gracz_f71c3
+2025-05-31 02:18:41 Utworzono gracza: Gracz_aada0
+2025-05-31 02:18:44 Utworzono gracza: Gracz_66ad2
+2025-05-31 02:18:47 Utworzono gracza: Gracz_0b1fd
+2025-05-31 02:18:47 Gracz Gracz_66ad2 dołączył do gry: CHARADES
+2025-05-31 02:18:47 Gracz Gracz_0b1fd dołączył do gry: CHARADES
+2025-05-31 11:40:26 Utworzono gracza: Gracz_fc771
+2025-05-31 11:40:28 Utworzono gracza: Gracz_30908
+2025-05-31 11:40:33 Utworzono gracza: Gracz_fc26e
+2025-05-31 11:40:44 Utworzono gracza: Gracz_68db3
+2025-05-31 11:40:48 Utworzono gracza: Gracz_8f776
+2025-05-31 11:40:52 Utworzono gracza: Gracz_6bfa0
+2025-05-31 11:40:52 Gracz Gracz_68db3 dołączył do gry: CHARADES
+2025-05-31 11:40:52 Gracz Gracz_8f776 dołączył do gry: CHARADES
+2025-05-31 11:40:52 Gracz Gracz_6bfa0 dołączył do gry: CHARADES
+2025-05-31 12:01:06 Utworzono gracza: Gracz_a0c50
+2025-05-31 12:01:08 Utworzono gracza: Gracz_af7f6
+2025-05-31 12:01:24 Utworzono gracza: Gracz_a6ac1
+2025-05-31 12:01:26 Utworzono gracza: Gracz_92b2e
+2025-05-31 12:01:26 Gracz Gracz_a6ac1 dołączył do gry: CHARADES
+2025-05-31 12:01:26 Gracz Gracz_92b2e dołączył do gry: CHARADES
+2025-05-31 12:14:30 Utworzono gracza: Gracz_6f551
+2025-05-31 12:14:32 Utworzono gracza: Gracz_13525
+2025-05-31 12:14:47 Utworzono gracza: Gracz_176e8
+2025-05-31 12:14:48 Utworzono gracza: Gracz_ed62d
+2025-05-31 12:14:48 Gracz Gracz_176e8 dołączył do gry: CHARADES
+2025-05-31 12:14:48 Gracz Gracz_ed62d dołączył do gry: CHARADES
+2025-05-31 12:29:52 Utworzono gracza: Gracz_3281c
+2025-05-31 12:29:53 Utworzono gracza: Gracz_b0bb6
+2025-05-31 12:30:15 Utworzono gracza: Gracz_5ce1a
+2025-05-31 12:30:15 Utworzono gracza: Gracz_98f5b
+2025-05-31 12:30:15 Gracz Gracz_5ce1a dołączył do gry: CHARADES
+2025-05-31 12:30:15 Gracz Gracz_98f5b dołączył do gry: CHARADES
+2025-05-31 12:36:05 Utworzono gracza: Gracz_989a1
+2025-05-31 12:36:06 Utworzono gracza: Gracz_9f2ef
+2025-05-31 12:36:13 Utworzono gracza: Gracz_e77b8
+2025-05-31 12:36:16 Utworzono gracza: Gracz_c77c1
+2025-05-31 12:36:16 Gracz Gracz_e77b8 dołączył do gry: CHARADES
+2025-05-31 12:36:16 Gracz Gracz_c77c1 dołączył do gry: CHARADES
+2025-05-31 12:47:48 Utworzono gracza: afas
+2025-05-31 12:47:57 Utworzono gracza: afewrw
+2025-05-31 12:47:57 Gracz afas dołączył do gry: CHARADES
+2025-05-31 12:47:57 Gracz afewrw dołączył do gry: CHARADES
+2025-05-31 12:55:04 Utworzono gracza: sgds
+2025-05-31 12:55:08 Utworzono gracza: sgsfs
+2025-05-31 12:55:08 Gracz sgds dołączył do gry: CHARADES
+2025-05-31 12:55:08 Gracz sgsfs dołączył do gry: CHARADES
+2025-05-31 13:51:04 Utworzono gracza: Gracz_d7cf3
+2025-05-31 13:51:06 Utworzono gracza: Gracz_d1167
+2025-05-31 13:51:20 Utworzono gracza: Gracz_bad4d
+2025-05-31 13:51:21 Utworzono gracza: Gracz_e0b13
+2025-05-31 13:51:21 Gracz Gracz_bad4d dołączył do gry: MEMORY
+2025-05-31 13:51:21 Gracz Gracz_e0b13 dołączył do gry: MEMORY
+2025-05-31 13:51:58 Utworzono gracza: Gracz_d2b39
+2025-05-31 13:52:08 Utworzono gracza: Gracz_2c960
+2025-05-31 13:52:08 Utworzono gracza: Gracz_719a2
+2025-05-31 13:52:12 Utworzono gracza: Gracz_da4e9
+2025-05-31 13:52:12 Gracz Gracz_2c960 dołączył do gry: CHARADES
+2025-05-31 13:52:12 Gracz Gracz_da4e9 dołączył do gry: CHARADES
+2025-05-31 14:05:18 Utworzono gracza: tak
+2025-05-31 14:05:22 Utworzono gracza: nie
+2025-05-31 14:05:22 Gracz tak dołączył do gry: MEMORY
+2025-05-31 14:05:22 Gracz nie dołączył do gry: MEMORY
+2025-05-31 14:05:47 Utworzono gracza: tak
+2025-05-31 14:05:53 Utworzono gracza: nie
+2025-05-31 14:05:53 Gracz tak dołączył do gry: CHARADES
+2025-05-31 14:05:53 Gracz nie dołączył do gry: CHARADES
+2025-05-31 14:13:09 Utworzono gracza: tak
+2025-05-31 14:13:15 Utworzono gracza: tnie
+2025-05-31 14:13:15 Gracz tak dołączył do gry: CHARADES
+2025-05-31 14:13:15 Gracz tnie dołączył do gry: CHARADES
+2025-05-31 14:33:36 Utworzono gracza: nie
+2025-05-31 14:33:37 Utworzono gracza: tak
+2025-05-31 14:33:37 Gracz nie dołączył do gry: MEMORY
+2025-05-31 14:33:37 Gracz tak dołączył do gry: MEMORY
+2025-05-31 14:34:06 Utworzono gracza: tak
+2025-05-31 14:34:11 Utworzono gracza: nie
+2025-05-31 14:34:11 Gracz tak dołączył do gry: CHARADES
+2025-05-31 14:34:11 Gracz nie dołączył do gry: CHARADES
+2025-05-31 14:38:40 Utworzono gracza: tak
+2025-05-31 14:38:55 Utworzono gracza: nie
+2025-05-31 14:38:55 Gracz tak dołączył do gry: MEMORY
+2025-05-31 14:38:55 Gracz nie dołączył do gry: MEMORY
