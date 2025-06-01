@@ -11,6 +11,7 @@ public class CharadesGame extends Game {
     private boolean[] hasGuessed;
     private final int expectedPlayerCount;
     private final Map<String, Boolean> guessedMap = new HashMap<>();
+    private int drawingsSubmitted = 0;
 
     public CharadesGame(int expectedPlayerCount) {
         this.expectedPlayerCount = expectedPlayerCount;
@@ -33,23 +34,6 @@ public class CharadesGame extends Game {
             processDrawing(playerId, message.substring(8));
             System.out.println("Rysunek od gracza: " + player.getName());
 
-            if (Arrays.stream(drawings).allMatch(Objects::nonNull)) {
-                for (int i = 0; i < players.size(); i++) {
-                    Player receiver = players.get(i);
-                    for (int j = 0; j < players.size(); j++) {
-                        if (i != j) {
-                            String senderName = players.get(j).getName();
-                            System.out.println("⮕ Do gracza " + receiver.getName() + " wysyłam rysunek od " + senderName);
-                            receiver.sendMessage("DRAWING_FROM:" + senderName + ":" + drawings[j]);
-                        }
-                    }
-                }
-
-                for (Player p : players) {
-                    p.sendMessage("START_GUESSING");
-                }
-            }
-
         } else if (message.startsWith("GUESS:")) {
             String[] parts = message.substring(6).split(":", 2);
             if (parts.length == 2) {
@@ -67,14 +51,21 @@ public class CharadesGame extends Game {
 
         ReportWriter.logGameResult("Wszyscy zakończyli zgadywanie", summary.toString(), "");
         broadcast("Server: Gra w Kalambury zakończona!");
+
+        // Reset stanu
+        drawingsSubmitted = 0;
+        Arrays.fill(drawings, null);
+        guessedMap.clear();
     }
 
     private void processDrawing(int playerId, String base64) {
         drawings[playerId] = base64;
+        drawingsSubmitted++;
+
         Player sender = players.get(playerId);
         System.out.println("✔️ Otrzymano rysunek od " + sender.getName());
 
-        if (allDrawingsSubmitted()) {
+        if (drawingsSubmitted == expectedPlayerCount) {
             broadcast("Server: Wszystkie rysunki zebrane. Czas na zgadywanie!");
 
             // Każdy gracz otrzymuje rysunki pozostałych graczy
@@ -88,8 +79,14 @@ public class CharadesGame extends Game {
                     }
                 }
             }
+
+            // 🔥 TERAZ zawsze wysyłamy START_GUESSING po rozesłaniu
+            for (Player p : players) {
+                p.sendMessage("START_GUESSING");
+            }
         }
     }
+
 
     private void processGuess(Player guesser, String targetSenderName, String guessText) {
         String key = guesser.getName() + "->" + targetSenderName;
@@ -102,6 +99,7 @@ public class CharadesGame extends Game {
             broadcast("Server: Wszyscy gracze zakończyli zgadywanie!");
             endGame();
         }
+
     }
 
     private boolean allDrawingsSubmitted() {
