@@ -20,33 +20,38 @@ public class CharadesGuessController {
     private int currentIndex = 0;
 
     private String selectedSender;
-    private GameClient client;
+    private GameClient client = GameClient.getInstance();
 
     public void setClient(GameClient client) {
         this.client = client;
 
         client.setOnMessage(msg -> Platform.runLater(() -> {
             if (msg.startsWith("DRAWING_FROM:")) {
-                String[] parts = msg.split(":", 3);
-                if (parts.length == 3) {
-                    String sender = parts[1];
-                    String base64 = parts[2];
 
-                    if (!base64Map.containsKey(sender)) {
-                        base64Map.put(sender, base64);
-                        senderOrder.add(sender);
-
-                        // Pierwszy rysunek? Pokaż od razu
-                        if (senderOrder.size() == 1) {
-                            showCurrentDrawing();
-                        }
-                    }
-                }
 
             } else if (msg.startsWith("RESULT:")) {
                 resultLabel.setText(msg.substring(7));
             }
         }));
+    }
+
+
+    public void processDrawing(String msg) {
+        String[] parts = msg.split(":", 3);
+        if (parts.length == 3) {
+            String sender = parts[1];
+            String base64 = parts[2];
+
+            if (!base64Map.containsKey(sender)) {
+                base64Map.put(sender, base64);
+                senderOrder.add(sender);
+
+                // Pierwszy rysunek? Pokaż od razu
+                if (senderOrder.size() == 1) {
+                    showCurrentDrawing();
+                }
+            }
+        }
     }
 
     private void showCurrentDrawing() {

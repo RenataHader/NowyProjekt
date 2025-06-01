@@ -38,10 +38,11 @@ public class NickInputController {
             return;
         }
 
-        GameClient client = new GameClient();
+        GameClient client = GameClient.getInstance();
         try {
             client.connect("localhost", 12345);
             client.sendMessage("NICK:" + nickname);
+            ViewManager manager = ViewManager.getInstance();
 
             if ("CHARADES".equalsIgnoreCase(selectedGame)) {
                 String count = playerCountField.getText().trim();
@@ -50,10 +51,14 @@ public class NickInputController {
                     return;
                 }
                 client.sendMessage("GAME:CHARADES:" + count);
-                loadFXML("/CharadesDraw.fxml", client, event);
+
+
+                manager.changeView("charadesDraw");
             } else {
                 client.sendMessage("GAME:MEMORY");
-                loadFXML("/memory.fxml", client, event);
+                MemoryController controller = manager.getController("memory", MemoryController.class);
+                controller.setClient(client);
+                manager.changeView("memory");
             }
         } catch (Exception e) {
             showAlert("Błąd połączenia z serwerem: " + e.getMessage());
@@ -61,20 +66,21 @@ public class NickInputController {
     }
 
     private void loadFXML(String path, GameClient client, ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-        Parent root = loader.load();
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+//        Parent root = loader.load();
+        ViewManager manager = ViewManager.getInstance();
+        Parent view = manager.getView("charadesDraw");
 
         if (path.contains("memory")) {
-            MemoryController ctrl = loader.getController();
-            ctrl.setClient(client);
+//            MemoryController ctrl = loader.getController();
+//            ctrl.setClient(client);
         } else {
-            CharadesDrawController ctrl = loader.getController();
-            ctrl.setClient(client);
+
         }
 
-        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+//        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+//        stage.setScene(new Scene(view));
+//        stage.show();
     }
 
     private void showAlert(String msg) {

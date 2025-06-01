@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class GameSelectionController {
-    private final GameClient client = new GameClient();
+    private final GameClient client = GameClient.getInstance();
 
     @FXML
     public void initialize() {
@@ -32,18 +32,22 @@ public class GameSelectionController {
     }
 
     private void loadNickInputView(String selectedGame, ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/NickInputView.fxml"));
-            Parent root = loader.load();
-            NickInputController controller = loader.getController();
-            controller.setSelectedGame(selectedGame);
-
-            Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/NickInputView.fxml"));
+//            Parent root = loader.load();
+//            NickInputController controller = loader.getController();
+//            controller.setSelectedGame(selectedGame);
+//
+//            Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+//            stage.setScene(new Scene(root));
+//            stage.show();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        ViewManager manager = ViewManager.getInstance();
+        NickInputController controller = manager.getController("nickInput", NickInputController.class);
+        controller.setSelectedGame(selectedGame);
+        manager.changeView("nickInput");
     }
 }
 

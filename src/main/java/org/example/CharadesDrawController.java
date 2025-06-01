@@ -23,18 +23,9 @@ public class CharadesDrawController {
     @FXML private Canvas drawingCanvas;
     @FXML private Button sendDrawingButton;
 
-    private GameClient client;
+    private GameClient client = GameClient.getInstance();
     private GraphicsContext gc;
 
-    public void setClient(GameClient client) {
-        this.client = client;
-
-        client.setOnMessage(msg -> {
-            if (msg.startsWith("START_GUESSING")) {
-                Platform.runLater(() -> switchToGuessingView());
-            }
-        });
-    }
 
     @FXML
     public void initialize() {
@@ -68,16 +59,13 @@ public class CharadesDrawController {
         sendDrawingButton.setDisable(true);
     }
 
-    private void switchToGuessingView() {
+    public void switchToGuessingView() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CharadesGuess.fxml"));
-            Parent root = loader.load();
-
-            CharadesGuessController controller = loader.getController();
-            controller.setClient(client);
+            ViewManager manager = ViewManager.getInstance();
+            Parent guessView = manager.getView("charadesGuess");
 
             Stage stage = (Stage) drawingCanvas.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(guessView));
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

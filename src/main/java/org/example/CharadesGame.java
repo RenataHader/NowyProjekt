@@ -66,7 +66,7 @@ public class CharadesGame extends Game {
         System.out.println("✔️ Otrzymano rysunek od " + sender.getName());
 
         if (drawingsSubmitted == expectedPlayerCount) {
-            broadcast("Server: Wszystkie rysunki zebrane. Czas na zgadywanie!");
+            broadcast("START_GUESSING");
 
             // Każdy gracz otrzymuje rysunki pozostałych graczy
             for (int i = 0; i < players.size(); i++) {

@@ -303,3 +303,356 @@
 2025-05-31 14:38:55 Utworzono gracza: nie
 2025-05-31 14:38:55 Gracz tak dołączył do gry: MEMORY
 2025-05-31 14:38:55 Gracz nie dołączył do gry: MEMORY
+2025-06-01 13:09:06 Utworzono gracza: tak
+2025-06-01 13:22:43 Utworzono gracza: tah
+2025-06-01 13:22:45 Utworzono gracza: ffcs
+2025-06-01 13:22:45 Gracz tah dołączył do gry: MEMORY
+2025-06-01 13:22:45 Gracz ffcs dołączył do gry: MEMORY
+2025-06-01 14:27:15 Utworzono gracza: era
+2025-06-01 14:27:16 Utworzono gracza: tak
+2025-06-01 14:27:16 Gracz era dołączył do gry: MEMORY
+2025-06-01 14:27:16 Gracz tak dołączył do gry: MEMORY
+2025-06-01 14:27:36 Utworzono gracza: ha
+2025-06-01 14:27:40 Utworzono gracza: ta
+2025-06-01 14:27:40 Gracz ha dołączył do gry: CHARADES
+2025-06-01 14:27:40 Gracz ta dołączył do gry: CHARADES
+2025-06-01 14:46:28 Utworzono gracza: tak
+2025-06-01 14:46:32 Utworzono gracza: nie
+2025-06-01 14:46:32 Gracz tak dołączył do gry: CHARADES
+2025-06-01 14:46:32 Gracz nie dołączył do gry: CHARADES
+2025-06-01 14:57:19 Utworzono gracza: tak
+2025-06-01 14:57:24 Utworzono gracza: nie
+2025-06-01 14:57:24 Gracz tak dołączył do gry: CHARADES
+2025-06-01 14:57:24 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:11:23 Utworzono gracza: nie
+2025-06-01 15:11:24 Utworzono gracza: tak
+2025-06-01 15:11:24 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:11:24 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:17:11 Utworzono gracza: nie
+2025-06-01 15:17:15 Utworzono gracza: tak
+2025-06-01 15:17:15 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:17:15 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:22:13 Utworzono gracza: nie
+2025-06-01 15:22:16 Utworzono gracza: tak
+2025-06-01 15:22:16 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:22:16 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:34:31 Utworzono gracza: tak
+2025-06-01 15:34:35 Utworzono gracza: nie
+2025-06-01 15:34:35 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:34:35 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:41:49 Utworzono gracza: tak
+2025-06-01 15:41:53 Utworzono gracza: nie
+2025-06-01 15:41:53 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:41:53 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:42:47 Utworzono gracza: tak
+2025-06-01 15:42:51 Utworzono gracza: nie
+2025-06-01 15:42:51 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:42:51 Gracz nie dołączył do gry: CHARADES
+2025-06-01 15:54:59 Utworzono gracza: tak
+2025-06-01 15:55:03 Utworzono gracza: nie
+2025-06-01 15:55:03 Gracz tak dołączył do gry: CHARADES
+2025-06-01 15:55:03 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:03:11 Utworzono gracza: tak
+2025-06-01 16:03:14 Utworzono gracza: nie
+2025-06-01 16:03:14 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:03:14 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:07:31 Utworzono gracza: tak
+2025-06-01 16:07:39 Utworzono gracza: nie
+2025-06-01 16:07:39 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:07:39 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:08:42 Utworzono gracza: tak
+2025-06-01 16:08:48 Utworzono gracza: nie
+2025-06-01 16:08:48 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:08:48 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:17:34 Utworzono gracza: tak
+2025-06-01 16:17:39 Utworzono gracza: nie
+2025-06-01 16:17:39 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:17:39 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:27:54 Utworzono gracza: tak
+2025-06-01 16:27:56 Utworzono gracza: nie
+2025-06-01 16:27:56 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:27:56 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:32:41 Utworzono gracza: tak
+2025-06-01 16:32:44 Utworzono gracza: nie
+2025-06-01 16:32:44 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:32:44 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:38:04 Utworzono gracza: tak
+2025-06-01 16:38:08 Utworzono gracza: nie
+2025-06-01 16:38:08 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:38:08 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:41:23 Utworzono gracza: tak
+2025-06-01 16:41:26 Utworzono gracza: nie
+2025-06-01 16:41:26 Gracz tak dołączył do gry: CHARADES
+2025-06-01 16:41:26 Gracz nie dołączył do gry: CHARADES
+2025-06-01 16:44:19 Utworzono gracza: gvd
+2025-06-01 16:44:23 Utworzono gracza: hr\a
+2025-06-01 16:44:23 Gracz gvd dołączył do gry: CHARADES
+2025-06-01 16:44:23 Gracz hr\a dołączył do gry: CHARADES
+2025-06-01 17:05:12 Utworzono gracza: tak
+2025-06-01 17:05:17 Utworzono gracza: nie
+2025-06-01 17:05:17 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:05:17 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:20:25 Utworzono gracza: tak
+2025-06-01 17:20:30 Utworzono gracza: nie
+2025-06-01 17:20:30 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:20:30 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:21:48 Utworzono gracza: nie
+2025-06-01 17:21:52 Utworzono gracza: tak
+2025-06-01 17:21:52 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:21:52 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:32:07 Utworzono gracza: tak
+2025-06-01 17:32:12 Utworzono gracza: nie
+2025-06-01 17:32:12 Gracz tak dołączył do gry: MEMORY
+2025-06-01 17:32:12 Gracz nie dołączył do gry: MEMORY
+2025-06-01 17:36:38 Utworzono gracza: tak
+2025-06-01 17:36:48 Utworzono gracza: nie
+2025-06-01 17:36:48 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:36:48 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:41:14 Utworzono gracza: tak
+2025-06-01 17:41:18 Utworzono gracza: nie
+2025-06-01 17:41:18 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:41:18 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:45:14 Utworzono gracza: tak
+2025-06-01 17:45:18 Utworzono gracza: nie
+2025-06-01 17:45:18 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:45:18 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:51:11 Utworzono gracza: tak
+2025-06-01 17:51:13 Utworzono gracza: nie
+2025-06-01 17:51:13 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:51:13 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:56:04 Utworzono gracza: tak
+2025-06-01 17:56:09 Utworzono gracza: nie
+2025-06-01 17:56:09 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:56:09 Gracz nie dołączył do gry: CHARADES
+2025-06-01 17:57:46 Utworzono gracza: tak
+2025-06-01 17:57:53 Utworzono gracza: nie
+2025-06-01 17:57:53 Gracz tak dołączył do gry: CHARADES
+2025-06-01 17:57:53 Gracz nie dołączył do gry: CHARADES
+2025-06-01 18:00:41 Utworzono gracza: tak
+2025-06-01 18:00:45 Utworzono gracza: nie
+2025-06-01 18:00:45 Gracz tak dołączył do gry: CHARADES
+2025-06-01 18:00:45 Gracz nie dołączył do gry: CHARADES
+2025-06-01 18:05:49 Utworzono gracza: gracz
+2025-06-01 18:05:53 Utworzono gracza: nie
+2025-06-01 18:05:53 Gracz gracz dołączył do gry: CHARADES
+2025-06-01 18:05:53 Gracz nie dołączył do gry: CHARADES
+2025-06-01 18:19:53 Utworzono gracza: garacz
+2025-06-01 18:19:59 Utworzono gracza: gracz
+2025-06-01 18:19:59 Gracz garacz dołączył do gry: CHARADES
+2025-06-01 18:19:59 Gracz gracz dołączył do gry: CHARADES
+2025-06-01 19:00:54 Utworzono gracza: tak
+2025-06-01 19:00:59 Utworzono gracza: nie
+2025-06-01 19:00:59 Gracz tak dołączył do gry: CHARADES
+2025-06-01 19:00:59 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:03:42 Utworzono gracza: gat
+2025-06-01 19:03:46 Utworzono gracza: aus
+2025-06-01 19:03:46 Gracz gat dołączył do gry: CHARADES
+2025-06-01 19:03:46 Gracz aus dołączył do gry: CHARADES
+2025-06-01 19:04:40 Utworzono gracza: tak
+2025-06-01 19:04:44 Utworzono gracza: nei
+2025-06-01 19:04:44 Gracz tak dołączył do gry: CHARADES
+2025-06-01 19:04:44 Gracz nei dołączył do gry: CHARADES
+2025-06-01 19:09:17 Utworzono gracza: agd
+2025-06-01 19:09:22 Utworzono gracza: nbuewi
+2025-06-01 19:09:22 Gracz agd dołączył do gry: CHARADES
+2025-06-01 19:09:22 Gracz nbuewi dołączył do gry: CHARADES
+2025-06-01 19:13:29 Utworzono gracza: nfab
+2025-06-01 19:13:35 Utworzono gracza: faujds
+2025-06-01 19:13:35 Gracz nfab dołączył do gry: CHARADES
+2025-06-01 19:13:35 Gracz faujds dołączył do gry: CHARADES
+2025-06-01 19:25:03 Utworzono gracza: tak
+2025-06-01 19:25:06 Utworzono gracza: tak
+2025-06-01 19:25:11 Utworzono gracza: nie
+2025-06-01 19:25:11 Gracz tak dołączył do gry: CHARADES
+2025-06-01 19:25:11 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:26:45 Utworzono gracza: nie
+2025-06-01 19:26:51 Utworzono gracza: jdnf
+2025-06-01 19:26:51 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:26:51 Gracz jdnf dołączył do gry: CHARADES
+2025-06-01 19:31:03 Utworzono gracza: nie
+2025-06-01 19:31:09 Utworzono gracza: tak
+2025-06-01 19:31:09 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:31:09 Gracz tak dołączył do gry: CHARADES
+2025-06-01 19:40:21 Utworzono gracza: tak
+2025-06-01 19:40:27 Utworzono gracza: nie
+2025-06-01 19:40:27 Gracz tak dołączył do gry: CHARADES
+2025-06-01 19:40:27 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:42:39 Utworzono gracza: nie
+2025-06-01 19:42:43 Utworzono gracza: task
+2025-06-01 19:42:43 Gracz nie dołączył do gry: CHARADES
+2025-06-01 19:42:43 Gracz task dołączył do gry: CHARADES
+2025-06-01 19:43:33 Utworzono gracza: tad
+2025-06-01 19:43:42 Utworzono gracza: bsahy
+2025-06-01 19:43:42 Gracz tad dołączył do gry: CHARADES
+2025-06-01 19:43:42 Gracz bsahy dołączył do gry: CHARADES
+2025-06-01 19:45:35 Utworzono gracza: atsfd
+2025-06-01 19:45:39 Utworzono gracza: abgds
+2025-06-01 19:45:39 Gracz atsfd dołączył do gry: CHARADES
+2025-06-01 19:45:39 Gracz abgds dołączył do gry: CHARADES
+2025-06-01 20:25:10 Utworzono gracza: adsh
+2025-06-01 20:25:17 Utworzono gracza: tas
+2025-06-01 20:25:17 Gracz adsh dołączył do gry: CHARADES
+2025-06-01 20:25:17 Gracz tas dołączył do gry: CHARADES
+2025-06-01 20:31:27 Utworzono gracza: asda
+2025-06-01 20:31:37 Utworzono gracza: afwsd
+2025-06-01 20:31:37 Gracz asda dołączył do gry: CHARADES
+2025-06-01 20:31:37 Gracz afwsd dołączył do gry: CHARADES
+2025-06-01 20:34:14 Utworzono gracza: egf
+2025-06-01 20:34:22 Utworzono gracza: sfwe
+2025-06-01 20:34:22 Gracz egf dołączył do gry: CHARADES
+2025-06-01 20:34:22 Gracz sfwe dołączył do gry: CHARADES
+2025-06-01 20:43:35 Utworzono gracza: dafas
+2025-06-01 20:43:54 Utworzono gracza: gfsdfca
+2025-06-01 20:43:54 Gracz dafas dołączył do gry: CHARADES
+2025-06-01 20:43:54 Gracz gfsdfca dołączył do gry: CHARADES
+2025-06-01 20:45:43 Utworzono gracza: fasdfas
+2025-06-01 20:45:50 Utworzono gracza: afasd
+2025-06-01 20:45:50 Gracz fasdfas dołączył do gry: CHARADES
+2025-06-01 20:45:50 Gracz afasd dołączył do gry: CHARADES
+2025-06-01 20:54:52 Utworzono gracza: sfsds
+2025-06-01 20:55:29 Utworzono gracza: afasd
+2025-06-01 20:55:29 Gracz sfsds dołączył do gry: CHARADES
+2025-06-01 20:55:29 Gracz afasd dołączył do gry: CHARADES
+2025-06-01 20:58:15 Utworzono gracza: qwrqw
+2025-06-01 20:58:42 Utworzono gracza: ewf
+2025-06-01 20:58:42 Gracz qwrqw dołączył do gry: CHARADES
+2025-06-01 20:58:42 Gracz ewf dołączył do gry: CHARADES
+2025-06-01 21:02:59 Utworzono gracza: stsds
+2025-06-01 21:03:12 Utworzono gracza: fadsa
+2025-06-01 21:03:12 Gracz stsds dołączył do gry: CHARADES
+2025-06-01 21:03:12 Gracz fadsa dołączył do gry: CHARADES
+2025-06-01 21:08:46 Utworzono gracza: gtdfs
+2025-06-01 21:08:58 Utworzono gracza: afas
+2025-06-01 21:08:58 Gracz gtdfs dołączył do gry: CHARADES
+2025-06-01 21:08:58 Gracz afas dołączył do gry: CHARADES
+2025-06-01 21:30:31 Utworzono gracza: qawr
+2025-06-01 21:41:45 Utworzono gracza: fsadd
+2025-06-01 21:42:45 Utworzono gracza: asfa
+2025-06-01 21:42:45 Gracz fsadd dołączył do gry: CHARADES
+2025-06-01 21:42:45 Gracz asfa dołączył do gry: CHARADES
+2025-06-01 21:43:26 Utworzono gracza: afs
+2025-06-01 21:44:04 Utworzono gracza: afs
+2025-06-01 21:44:04 Gracz afs dołączył do gry: CHARADES
+2025-06-01 21:44:04 Gracz afs dołączył do gry: CHARADES
+2025-06-01 21:53:01 Utworzono gracza: fadfa
+2025-06-01 21:56:47 Utworzono gracza: aasd
+2025-06-01 21:57:08 Utworzono gracza: afdas
+2025-06-01 21:57:08 Gracz aasd dołączył do gry: CHARADES
+2025-06-01 21:57:08 Gracz afdas dołączył do gry: CHARADES
+2025-06-01 22:01:10 Utworzono gracza: adcas
+2025-06-01 22:01:13 Utworzono gracza: axasx
+2025-06-01 22:01:13 Gracz adcas dołączył do gry: CHARADES
+2025-06-01 22:01:13 Gracz axasx dołączył do gry: CHARADES
+2025-06-01 22:05:42 Utworzono gracza: afxc
+2025-06-01 22:05:47 Utworzono gracza: afad
+2025-06-01 22:05:47 Gracz afxc dołączył do gry: CHARADES
+2025-06-01 22:05:47 Gracz afad dołączył do gry: CHARADES
+2025-06-01 22:06:30 Utworzono gracza: gsadf
+2025-06-01 22:06:42 Utworzono gracza: afas
+2025-06-01 22:06:42 Gracz gsadf dołączył do gry: CHARADES
+2025-06-01 22:06:42 Gracz afas dołączył do gry: CHARADES
+2025-06-01 22:31:07 Utworzono gracza: dfas
+2025-06-01 22:32:55 Utworzono gracza: gsds
+2025-06-01 22:34:37 Utworzono gracza: dasd
+2025-06-01 22:34:52 Utworzono gracza: dasd
+2025-06-01 22:34:52 Gracz dasd dołączył do gry: MEMORY
+2025-06-01 22:34:52 Gracz dasd dołączył do gry: MEMORY
+2025-06-01 22:35:56 Utworzono gracza: sads
+2025-06-01 22:35:57 Utworzono gracza: sads
+2025-06-01 22:35:57 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:57 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:57 Utworzono gracza: sads
+2025-06-01 22:35:58 Utworzono gracza: sads
+2025-06-01 22:35:58 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:58 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:58 Utworzono gracza: sads
+2025-06-01 22:35:58 Utworzono gracza: sads
+2025-06-01 22:35:58 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:58 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:35:58 Utworzono gracza: sads
+2025-06-01 22:36:00 Utworzono gracza: sads
+2025-06-01 22:36:00 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:00 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:00 Utworzono gracza: sads
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Utworzono gracza: sads
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:01 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:02 Utworzono gracza: sads
+2025-06-01 22:36:02 Utworzono gracza: sads
+2025-06-01 22:36:02 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:02 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:02 Utworzono gracza: sads
+2025-06-01 22:36:02 Utworzono gracza: sads
+2025-06-01 22:36:02 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:02 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:02 Utworzono gracza: sads
+2025-06-01 22:36:03 Utworzono gracza: sads
+2025-06-01 22:36:03 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:03 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:03 Utworzono gracza: sads
+2025-06-01 22:36:03 Utworzono gracza: sads
+2025-06-01 22:36:03 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:03 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:03 Utworzono gracza: sads
+2025-06-01 22:36:04 Utworzono gracza: sads
+2025-06-01 22:36:04 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:04 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:04 Utworzono gracza: sads
+2025-06-01 22:36:05 Utworzono gracza: sads
+2025-06-01 22:36:05 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:05 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:05 Utworzono gracza: sads
+2025-06-01 22:36:13 Utworzono gracza: asds
+2025-06-01 22:36:13 Gracz sads dołączył do gry: MEMORY
+2025-06-01 22:36:13 Gracz asds dołączył do gry: MEMORY
+2025-06-01 22:36:13 Utworzono gracza: asds
+2025-06-01 22:36:13 Utworzono gracza: asds
+2025-06-01 22:36:13 Gracz asds dołączył do gry: MEMORY
+2025-06-01 22:36:13 Gracz asds dołączył do gry: MEMORY
+2025-06-01 22:36:32 Utworzono gracza: sdfs
+2025-06-01 22:39:08 Utworzono gracza: afa
+2025-06-01 22:42:51 Utworzono gracza: awsas
+2025-06-01 22:42:56 Utworzono gracza: afras
+2025-06-01 22:42:56 Gracz awsas dołączył do gry: CHARADES
+2025-06-01 22:42:56 Gracz afras dołączył do gry: CHARADES
+2025-06-01 22:43:19 Zwycięzca: Wszyscy zakończyli zgadywanie | Przeciwnik: Gra zakończona. Gracze: awsas afras 
+2025-06-01 22:44:47 Utworzono gracza: sfdas
+2025-06-01 22:45:01 Utworzono gracza: afsas
+2025-06-01 22:45:04 Utworzono gracza: asdfaf
+2025-06-01 22:45:04 Gracz sfdas dołączył do gry: CHARADES
+2025-06-01 22:45:04 Gracz afsas dołączył do gry: CHARADES
+2025-06-01 22:45:04 Gracz asdfaf dołączył do gry: CHARADES
+2025-06-01 22:46:29 Zwycięzca: Wszyscy zakończyli zgadywanie | Przeciwnik: Gra zakończona. Gracze: sfdas afsas asdfaf 
+2025-06-01 23:04:20 Utworzono gracza: das
+2025-06-01 23:04:26 Utworzono gracza: asaf
+2025-06-01 23:04:26 Gracz das dołączył do gry: MEMORY
+2025-06-01 23:04:26 Gracz asaf dołączył do gry: MEMORY
+2025-06-01 23:06:40 Utworzono gracza: fgas
+2025-06-01 23:06:42 Utworzono gracza: afa
+2025-06-01 23:06:42 Gracz fgas dołączył do gry: MEMORY
+2025-06-01 23:06:42 Gracz afa dołączył do gry: MEMORY
+2025-06-01 23:06:50 Utworzono gracza: sdas
+2025-06-01 23:07:00 Utworzono gracza: asda
+2025-06-01 23:07:00 Gracz sdas dołączył do gry: CHARADES
+2025-06-01 23:07:00 Gracz asda dołączył do gry: CHARADES
+2025-06-01 23:07:41 Zwycięzca: Wszyscy zakończyli zgadywanie | Przeciwnik: Gra zakończona. Gracze: sdas asda 
+2025-06-01 23:29:46 Utworzono gracza: fasdasw
+2025-06-01 23:29:49 Utworzono gracza: asfsa
+2025-06-01 23:30:08 Utworzono gracza: asfa
+2025-06-01 23:30:08 Gracz fasdasw dołączył do gry: MEMORY
+2025-06-01 23:30:08 Gracz asfa dołączył do gry: MEMORY
+2025-06-01 23:30:21 Utworzono gracza: fas
+2025-06-01 23:30:21 Gracz asfsa dołączył do gry: CHARADES
+2025-06-01 23:30:21 Gracz fas dołączył do gry: CHARADES
