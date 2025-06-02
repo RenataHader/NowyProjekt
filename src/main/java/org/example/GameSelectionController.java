@@ -32,18 +32,6 @@ public class GameSelectionController {
     }
 
     private void loadNickInputView(String selectedGame, ActionEvent event) {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/NickInputView.fxml"));
-//            Parent root = loader.load();
-//            NickInputController controller = loader.getController();
-//            controller.setSelectedGame(selectedGame);
-//
-//            Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         ViewManager manager = ViewManager.getInstance();
         NickInputController controller = manager.getController("nickInput", NickInputController.class);
         controller.setSelectedGame(selectedGame);

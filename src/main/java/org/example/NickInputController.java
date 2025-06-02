@@ -24,7 +24,7 @@ public class NickInputController {
         if ("CHARADES".equalsIgnoreCase(selectedGame)) {
             playerCountBox.setVisible(true);
             titleLabel.setText("Podaj nick i liczbę graczy");
-        } else {
+        } else if ("MEMORY".equalsIgnoreCase(selectedGame)){
             playerCountBox.setVisible(false);
             titleLabel.setText("Podaj nick");
         }
@@ -46,41 +46,20 @@ public class NickInputController {
 
             if ("CHARADES".equalsIgnoreCase(selectedGame)) {
                 String count = playerCountField.getText().trim();
-                if (!count.matches("\\d+")) {
-                    showAlert("Liczba graczy musi być liczbą!");
+                int playerCount = Integer.parseInt(count);
+                if (!count.matches("\\d+") && playerCount > 1) {
+                    showAlert("Liczba graczy musi być liczba większa od jednego!");
                     return;
                 }
                 client.sendMessage("GAME:CHARADES:" + count);
-
-
                 manager.changeView("charadesDraw");
             } else {
                 client.sendMessage("GAME:MEMORY");
-                MemoryController controller = manager.getController("memory", MemoryController.class);
-                controller.setClient(client);
                 manager.changeView("memory");
             }
         } catch (Exception e) {
             showAlert("Błąd połączenia z serwerem: " + e.getMessage());
         }
-    }
-
-    private void loadFXML(String path, GameClient client, ActionEvent event) throws Exception {
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-//        Parent root = loader.load();
-        ViewManager manager = ViewManager.getInstance();
-        Parent view = manager.getView("charadesDraw");
-
-        if (path.contains("memory")) {
-//            MemoryController ctrl = loader.getController();
-//            ctrl.setClient(client);
-        } else {
-
-        }
-
-//        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-//        stage.setScene(new Scene(view));
-//        stage.show();
     }
 
     private void showAlert(String msg) {

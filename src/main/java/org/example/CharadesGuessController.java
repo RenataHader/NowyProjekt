@@ -18,25 +18,10 @@ public class CharadesGuessController {
     private final Map<String, String> base64Map = new HashMap<>();
     private final List<String> senderOrder = new ArrayList<>();
     private int currentIndex = 0;
-
     private String selectedSender;
     private GameClient client = GameClient.getInstance();
 
-    public void setClient(GameClient client) {
-        this.client = client;
-
-        client.setOnMessage(msg -> Platform.runLater(() -> {
-            if (msg.startsWith("DRAWING_FROM:")) {
-
-
-            } else if (msg.startsWith("RESULT:")) {
-                resultLabel.setText(msg.substring(7));
-            }
-        }));
-    }
-
-
-    public void processDrawing(String msg) {
+    public void processShowPicture(String msg) {
         String[] parts = msg.split(":", 3);
         if (parts.length == 3) {
             String sender = parts[1];
@@ -48,13 +33,13 @@ public class CharadesGuessController {
 
                 // Pierwszy rysunek? Pokaż od razu
                 if (senderOrder.size() == 1) {
-                    showCurrentDrawing();
+                    showCurrentPicture();
                 }
             }
         }
     }
 
-    private void showCurrentDrawing() {
+    private void showCurrentPicture() {
         if (currentIndex < senderOrder.size()) {
             selectedSender = senderOrder.get(currentIndex);
             String base64 = base64Map.get(selectedSender);
@@ -64,7 +49,7 @@ public class CharadesGuessController {
                 resultLabel.setText("Zgadnij rysunek gracza: " + selectedSender);
             }
         } else {
-            resultLabel.setText("Wszystkie rysunki zgadnięte! 🎉");
+            resultLabel.setText("Wszystkie rysunki odgadniete! 🎉");
             drawingImage.setImage(null);
             selectedSender = null;
         }
@@ -81,6 +66,16 @@ public class CharadesGuessController {
         client.sendMessage("GUESS:" + selectedSender + ":" + guess);
         guessField.clear();
         currentIndex++;
-        showCurrentDrawing();
+        showCurrentPicture();
     }
+
+    public void prepareNewRound() {
+        base64Map.clear();
+        senderOrder.clear();
+        currentIndex = 0;
+        selectedSender = null;
+        resultLabel.setText("");
+        drawingImage.setImage(null);
+    }
+
 }

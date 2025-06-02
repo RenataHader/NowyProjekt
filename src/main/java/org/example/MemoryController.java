@@ -1,6 +1,5 @@
 package org.example;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -8,28 +7,22 @@ import javafx.scene.layout.GridPane;
 public class MemoryController {
     @FXML private GridPane gameGrid;
     @FXML private TextArea chatArea;
-    @FXML private TextField messageField;
     @FXML private Label scoreLabel;
 
 
     private final Button[][] buttons = new Button[3][8];
-    private GameClient client;
+    private GameClient client = GameClient.getInstance();
 
     @FXML
     public void initialize() {
         initGrid();
         try {
             client.connect("localhost", 12345);
-            client.sendMessage("GAME:MEMORY"); // <== DODAJ TUTAJ
-            client.setOnMessage(this::handleMessage);
+            client.sendMessage("GAME:MEMORY");
+          // client.setOnMessage(this::handleMessage);
         } catch (Exception e) {
             chatArea.appendText("Connection failed: " + e.getMessage() + "\n");
         }
-    }
-
-    public void setClient(GameClient client) {
-        this.client = client;
-        client.setOnMessage(this::handleMessage);
     }
 
     private void initGrid() {
@@ -46,47 +39,41 @@ public class MemoryController {
         }
     }
 
-    private void handleMessage(String msg) {
-        Platform.runLater(() -> {
-            if (msg.startsWith("UPDATE:")) {
-                String[] parts = msg.substring(7).split("=");
-                String[] coords = parts[0].split(",");
-                int r = Integer.parseInt(coords[0]);
-                int c = Integer.parseInt(coords[1]);
-                String value = parts[1];
-                buttons[r][c].setText(value);
-                buttons[r][c].setDisable(true);
-            } else if (msg.startsWith("MATCH:")) {
-                for (String pos : msg.substring(6).split("\\|")) {
-                    String[] coords = pos.split(",");
-                    int r = Integer.parseInt(coords[0]);
-                    int c = Integer.parseInt(coords[1]);
-                    buttons[r][c].setStyle("-fx-background-color: lightgreen;");
-                    buttons[r][c].setDisable(true);
-                }
-            } else if (msg.startsWith("HIDE:")) {
-                for (String pos : msg.substring(5).split("\\|")) {
-                    String[] coords = pos.split(",");
-                    int r = Integer.parseInt(coords[0]);
-                    int c = Integer.parseInt(coords[1]);
-                    buttons[r][c].setText("");
-                    buttons[r][c].setDisable(false);
-                }
-            } else if (msg.startsWith("Server: Wynik - ")) {
-                scoreLabel.setText(msg.replace("Server: ", ""));
-            } else if (msg.startsWith("Server:")) {
-                chatArea.appendText(msg + "\n");
-            }
-            else {
-                chatArea.appendText(msg + "\n");
-            }
-        });
+    public void turnCard(String msg) {
+        String[] parts = msg.substring(7).split("=");
+        String[] coords = parts[0].split(",");
+        int r = Integer.parseInt(coords[0]);
+        int c = Integer.parseInt(coords[1]);
+        String value = parts[1];
+        buttons[r][c].setText(value);
+        buttons[r][c].setDisable(true);
     }
 
-    @FXML
-    public void sendMessage() {
-        String text = messageField.getText();
-        client.sendMessage(text);
-        messageField.clear();
+    public void matchCard(String msg) {
+        for (String pos : msg.substring(6).split("\\|")) {
+            String[] coords = pos.split(",");
+            int r = Integer.parseInt(coords[0]);
+            int c = Integer.parseInt(coords[1]);
+            buttons[r][c].setStyle("-fx-background-color: lightgreen;");
+            buttons[r][c].setDisable(true);
+        }
+    }
+
+    public void backCard(String msg) {
+        for (String pos : msg.substring(5).split("\\|")) {
+            String[] coords = pos.split(",");
+            int r = Integer.parseInt(coords[0]);
+            int c = Integer.parseInt(coords[1]);
+            buttons[r][c].setText("");
+            buttons[r][c].setDisable(false);
+        }
+    }
+
+    public void setScore(String msg) {
+        scoreLabel.setText(msg.replace("Server: ", ""));
+    }
+
+    public void setServer(String msg) {
+        chatArea.appendText(msg + "\n");
     }
 }

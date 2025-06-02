@@ -34,7 +34,7 @@ public class ViewManager {
         loadView("nickInput", "/NickInputView.fxml", NickInputController.class);
         loadView("charadesDraw", "/CharadesDraw.fxml", CharadesDrawController.class);
         loadView("charadesGuess", "/CharadesGuess.fxml", CharadesGuessController.class);
-        loadView("memory", "/memory.fxml", MemoryController.class);
+        loadView("memory", "/MemoryView.fxml", MemoryController.class);
     }
 
     public static synchronized ViewManager getInstance() {

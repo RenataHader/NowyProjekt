@@ -1,19 +1,12 @@
 package org.example;
 
-import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.WritableImage;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
 import javax.imageio.ImageIO;
 import java.io.ByteArrayOutputStream;
 import java.util.Base64;
@@ -25,7 +18,6 @@ public class CharadesDrawController {
 
     private GameClient client = GameClient.getInstance();
     private GraphicsContext gc;
-
 
     @FXML
     public void initialize() {
@@ -59,17 +51,8 @@ public class CharadesDrawController {
         sendDrawingButton.setDisable(true);
     }
 
-    public void switchToGuessingView() {
-        try {
-            ViewManager manager = ViewManager.getInstance();
-            Parent guessView = manager.getView("charadesGuess");
-
-            Stage stage = (Stage) drawingCanvas.getScene().getWindow();
-            stage.setScene(new Scene(guessView));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void prepareNewRound() {
+        gc.clearRect(0, 0, drawingCanvas.getWidth(), drawingCanvas.getHeight());
+        sendDrawingButton.setDisable(false);
     }
-
 }
