@@ -1,23 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.NickInputController"
-      alignment="CENTER" spacing="10.0">
+<?import java.lang.Integer?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.NickInputController">
 
-    <Label fx:id="titleLabel" text="Podaj nick" style="-fx-font-size: 16px;" />
-    <TextField fx:id="nicknameField" promptText="Twój nick"/>
+    <!-- Tło -->
+    <ImageView fitWidth="1000" fitHeight="700" preserveRatio="false">
+        <image>
+            <Image url="./images/table.png" />
+        </image>
+    </ImageView>
 
-    <HBox fx:id="playerCountBox" spacing="10">
-        <Label text="Liczba graczy:"/>
-        <TextField fx:id="playerCountField"/>
-    </HBox>
+    <!-- Główna zawartość - teraz bez białego tła -->
+    <VBox alignment="CENTER"
+          spacing="20.0"
+          style="-fx-padding: 30;">
 
-    <Button text="Dołącz do gry" onAction="#submit"/>
+        <!-- Tytuł -->
+        <Label fx:id="titleLabel" text="Podaj nick i liczbę graczy"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
 
-</VBox>
+        <!-- Pole na nick -->
+        <VBox spacing="5">
+            <Label text="Twój nick:" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+            <TextField fx:id="nicknameField"
+                       promptText="Wprowadź swój nick"
+                       style="-fx-font-size: 14px; -fx-pref-width: 250px; -fx-background-radius: 5;"/>
+        </VBox>
+
+        <!-- Wybór liczby graczy -->
+        <VBox spacing="5">
+            <Label text="Liczba graczy:" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+            <ChoiceBox fx:id="playerCountChoice"
+                       style="-fx-pref-width: 250px; -fx-background-radius: 5;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <Integer fx:value="2"/>
+                        <Integer fx:value="3"/>
+                        <Integer fx:value="4"/>
+                        <Integer fx:value="5"/>
+                        <Integer fx:value="6"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+        </VBox>
+
+        <!-- Przycisk -->
+        <Button text="Dołącz do gry"
+                onAction="#handleSubmit"
+                style="-fx-font-size: 16px; -fx-pref-width: 250px;
+                      -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5;"/>
+    </VBox>
+</StackPane>

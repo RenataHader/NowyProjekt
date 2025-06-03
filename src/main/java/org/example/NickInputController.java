@@ -2,19 +2,13 @@ package org.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 
 public class NickInputController {
 
     @FXML private Label titleLabel;
     @FXML private TextField nicknameField;
-    @FXML private TextField playerCountField;
-    @FXML private HBox playerCountBox;
+    @FXML private ChoiceBox<Integer> playerCountChoice;
 
     private String selectedGame; // MEMORY / CHARADES
 
@@ -22,16 +16,16 @@ public class NickInputController {
         this.selectedGame = selectedGame;
 
         if ("CHARADES".equalsIgnoreCase(selectedGame)) {
-            playerCountBox.setVisible(true);
+            playerCountChoice.setVisible(true);
             titleLabel.setText("Podaj nick i liczbę graczy");
-        } else if ("MEMORY".equalsIgnoreCase(selectedGame)){
-            playerCountBox.setVisible(false);
+        } else if ("MEMORY".equalsIgnoreCase(selectedGame)) {
+            playerCountChoice.setVisible(false);
             titleLabel.setText("Podaj nick");
         }
     }
 
     @FXML
-    public void submit(ActionEvent event) {
+    public void handleSubmit(ActionEvent event) {
         String nickname = nicknameField.getText().trim();
         if (nickname.isEmpty()) {
             showAlert("Wpisz nick!");
@@ -45,13 +39,12 @@ public class NickInputController {
             ViewManager manager = ViewManager.getInstance();
 
             if ("CHARADES".equalsIgnoreCase(selectedGame)) {
-                String count = playerCountField.getText().trim();
-                int playerCount = Integer.parseInt(count);
-                if (!count.matches("\\d+") && playerCount > 1) {
-                    showAlert("Liczba graczy musi być liczba większa od jednego!");
+                Integer playerCount = playerCountChoice.getValue();
+                if (playerCount == null || playerCount < 2) {
+                    showAlert("Wybierz poprawną liczbę graczy (min. 2)!");
                     return;
                 }
-                client.sendMessage("GAME:CHARADES:" + count);
+                client.sendMessage("GAME:CHARADES:" + playerCount);
                 manager.changeView("charadesDraw");
             } else {
                 client.sendMessage("GAME:MEMORY");
