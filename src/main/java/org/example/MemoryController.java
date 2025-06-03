@@ -43,7 +43,7 @@ public class MemoryController {
                 ImageView imgView = new ImageView(cardBackImage);
                 imgView.setFitWidth(60);
                 imgView.setFitHeight(90);
-                //imgView.setPreserveRatio(false);
+                imgView.setPreserveRatio(false);
 
                 btn.setGraphic(imgView);
                 buttons[i][j] = btn;
