@@ -9,11 +9,15 @@ import java.util.Map;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 
 public class ViewManager {
 
     private static ViewManager instance;
     private Stage window;
+
+
 
     private static class ViewData<T> {
         final Parent view;
