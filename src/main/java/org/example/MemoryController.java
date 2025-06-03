@@ -3,6 +3,9 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 public class MemoryController {
     @FXML private GridPane gameGrid;
@@ -12,6 +15,10 @@ public class MemoryController {
 
     private final Button[][] buttons = new Button[3][8];
     private GameClient client = GameClient.getInstance();
+
+    private final Image cardBackImage = new Image(getClass().getResource("/images/card_back.png").toExternalForm());
+    private final ImageView[][] cardViews = new ImageView[3][8];
+
 
     @FXML
     public void initialize() {
@@ -29,15 +36,27 @@ public class MemoryController {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
                 Button btn = new Button();
-                btn.setPrefSize(50, 50);
+                btn.setPrefSize(60, 90);
                 btn.setFocusTraversable(false);
+                btn.setStyle("-fx-background-color: transparent;");
+
+                ImageView imgView = new ImageView(cardBackImage);
+                imgView.setFitWidth(60);
+                imgView.setFitHeight(90);
+                //imgView.setPreserveRatio(false);
+
+                btn.setGraphic(imgView);
+                buttons[i][j] = btn;
+                cardViews[i][j] = imgView;
+
                 int row = i, col = j;
                 btn.setOnAction(e -> client.sendMessage(row + "," + col));
-                buttons[i][j] = btn;
+
                 gameGrid.add(btn, j, i);
             }
         }
     }
+
 
     public void turnCard(String msg) {
         String[] parts = msg.substring(7).split("=");
@@ -45,9 +64,13 @@ public class MemoryController {
         int r = Integer.parseInt(coords[0]);
         int c = Integer.parseInt(coords[1]);
         String value = parts[1];
-        buttons[r][c].setText(value);
+
+        String imagePath = "/images/card_" + value + ".png";
+        Image frontImage = new Image(getClass().getResource(imagePath).toExternalForm());
+        cardViews[r][c].setImage(frontImage);
         buttons[r][c].setDisable(true);
     }
+
 
     public void matchCard(String msg) {
         for (String pos : msg.substring(6).split("\\|")) {
@@ -64,10 +87,11 @@ public class MemoryController {
             String[] coords = pos.split(",");
             int r = Integer.parseInt(coords[0]);
             int c = Integer.parseInt(coords[1]);
-            buttons[r][c].setText("");
+            cardViews[r][c].setImage(cardBackImage);
             buttons[r][c].setDisable(false);
         }
     }
+
 
     public void setScore(String msg) {
         scoreLabel.setText(msg.replace("Server: ", ""));

@@ -1,23 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
-<?import javafx.geometry.Insets?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.MemoryController"
-      spacing="10" alignment="CENTER">
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.MemoryController">
 
-    <padding>
-        <Insets top="10" right="10" bottom="10" left="10" />
-    </padding>
+    <ImageView fx:id="backgroundImage"
+               preserveRatio="false"
+               fitWidth="1920"
+               fitHeight="1080"
+               pickOnBounds="true">
+        <Image url="@/images/table.png" />
+    </ImageView>
 
-    <Label fx:id="scoreLabel" text="Wynik: Gracz 1: 0 | Gracz 2: 0" />
-    <GridPane fx:id="gameGrid" hgap="5" vgap="5"/>
-    <TextArea fx:id="chatArea" prefHeight="100" prefWidth="600" editable="false" wrapText="true"/>
+    <BorderPane>
 
-</VBox>
+        <top>
+            <StackPane prefHeight="100" style="-fx-padding: 40 30 0 20;">
+                <Label fx:id="timerLabel" text="Czas: 20s"
+                       style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;"
+                       StackPane.alignment="TOP_RIGHT" />
+            </StackPane>
+        </top>
+
+        <left>
+            <VBox fx:id="scorePanel"
+                  prefWidth="200"
+                  spacing="10"
+                  alignment="TOP_CENTER"
+                  style="-fx-background-color: rgba(0,0,0,0.5); -fx-padding: 20;">
+
+                <Label text="Wyniki:"
+                       style="-fx-text-fill: white;-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+                <Separator/>
+            </VBox>
+        </left>
+
+        <center>
+            <GridPane fx:id="gameGrid"
+                      hgap="5" vgap="5"
+                      alignment="CENTER"
+                      style="-fx-padding: 20;" />
+        </center>
+
+        <bottom>
+            <TextArea fx:id="chatArea"
+                      prefHeight="100"
+                      prefWidth="600"
+                      editable="false"
+                      wrapText="true"
+                      style="-fx-font-size: 14px; -fx-padding: 10;"
+                      BorderPane.alignment="CENTER"/>
+        </bottom>
+
+    </BorderPane>
+</StackPane>
