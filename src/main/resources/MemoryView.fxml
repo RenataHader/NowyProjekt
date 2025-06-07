@@ -37,8 +37,14 @@
 
                 <Label text="Wyniki:"
                        style="-fx-text-fill: white;-fx-font-size: 24px; -fx-font-weight: bold;" />
-
                 <Separator/>
+                <Label fx:id="player1Score" text="Gracz 1: 0"
+                       style="-fx-text-fill: white; -fx-font-size: 18px;" />
+
+                <Label fx:id="player2Score" text="Gracz 2: 0"
+                       style="-fx-text-fill: white; -fx-font-size: 18px;" />
+
+
             </VBox>
         </left>
 

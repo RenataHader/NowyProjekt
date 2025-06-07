@@ -11,6 +11,8 @@ public class MemoryController {
     @FXML private GridPane gameGrid;
     @FXML private TextArea chatArea;
     @FXML private Label scoreLabel;
+    @FXML private Label player1Score;
+    @FXML private Label player2Score;
 
 
     private final Button[][] buttons = new Button[3][8];
@@ -94,7 +96,13 @@ public class MemoryController {
 
 
     public void setScore(String msg) {
-        scoreLabel.setText(msg.replace("Server: ", ""));
+        msg = msg.replace("Server: ", "").replace("Wynik - ", "");
+        String[] parts = msg.split(" ");
+        int p1 = Integer.parseInt(parts[2]);
+        int p2 = Integer.parseInt(parts[5]);
+
+        player1Score.setText("Gracz 1: " + p1);
+        player2Score.setText("Gracz 2: " + p2);
     }
 
     public void setServer(String msg) {

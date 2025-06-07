@@ -27,7 +27,7 @@ public class ClientHandler implements Runnable {
                     if (!nick.isEmpty()) {
                         player.setName(nick);
                         ReportWriter.logPlayerCreated(nick);
-                        System.out.println("✔️ Gracz ustawił nick: " + nick);
+                        System.out.println("Gracz ustawił nick: " + nick);
                     }
                     continue;
                 }
