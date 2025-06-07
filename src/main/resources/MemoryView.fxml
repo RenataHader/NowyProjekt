@@ -21,12 +21,24 @@
     <BorderPane>
 
         <top>
-            <StackPane prefHeight="100" style="-fx-padding: 40 30 0 20;">
-                <Label fx:id="timerLabel" text="Czas: 20s"
-                       style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;"
-                       StackPane.alignment="TOP_RIGHT" />
+            <StackPane prefHeight="100" style="-fx-padding: 20 30 0 30;">
+
+                <!-- Napis tury idealnie na środku -->
+                <Label fx:id="turnLabel" text="Tura gracza 1"
+                       style="-fx-text-fill: black; -fx-font-size: 30px; -fx-font-weight: bold;" />
+
+                <!-- Timer po prawej -->
+                <HBox alignment="CENTER_RIGHT" style="-fx-background-color: transparent;"
+                      StackPane.alignment="TOP_RIGHT" >
+                    <Label fx:id="timerLabel" text="Czas: 20s"
+                           style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;" />
+                </HBox>
+
             </StackPane>
         </top>
+
+
+
 
         <left>
             <VBox fx:id="scorePanel"
@@ -56,13 +68,7 @@
         </center>
 
         <bottom>
-            <TextArea fx:id="chatArea"
-                      prefHeight="100"
-                      prefWidth="600"
-                      editable="false"
-                      wrapText="true"
-                      style="-fx-font-size: 14px; -fx-padding: 10;"
-                      BorderPane.alignment="CENTER"/>
+
         </bottom>
 
     </BorderPane>

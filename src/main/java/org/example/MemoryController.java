@@ -13,6 +13,7 @@ public class MemoryController {
     @FXML private Label scoreLabel;
     @FXML private Label player1Score;
     @FXML private Label player2Score;
+    @FXML private Label turnLabel;
 
 
     private final Button[][] buttons = new Button[3][8];
@@ -21,6 +22,12 @@ public class MemoryController {
     private final Image cardBackImage = new Image(getClass().getResource("/images/card_back.png").toExternalForm());
     private final ImageView[][] cardViews = new ImageView[3][8];
 
+    public void updateTurn(int playerNumber) {
+        if (turnLabel != null) {
+            turnLabel.setText("Tura gracza " + playerNumber);
+        }
+    }
+
 
     @FXML
     public void initialize() {
@@ -28,7 +35,7 @@ public class MemoryController {
         try {
             client.connect("localhost", 12345);
             client.sendMessage("GAME:MEMORY");
-          // client.setOnMessage(this::handleMessage);
+           // client.setOnMessage(this::handleMessage);
         } catch (Exception e) {
             chatArea.appendText("Connection failed: " + e.getMessage() + "\n");
         }
@@ -106,6 +113,12 @@ public class MemoryController {
     }
 
     public void setServer(String msg) {
-        chatArea.appendText(msg + "\n");
+        if (msg.startsWith("Server: Tura gracza ")) {
+            int playerNumber = Integer.parseInt(msg.substring("Server: Tura gracza ".length()).trim());
+            updateTurn(playerNumber);
+        } else {
+            chatArea.appendText(msg + "\n");
+        }
     }
+
 }
