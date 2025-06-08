@@ -35,7 +35,7 @@ public class MemoryController {
         try {
             client.connect("localhost", 12345);
             client.sendMessage("GAME:MEMORY");
-           // client.setOnMessage(this::handleMessage);
+            // client.setOnMessage(this::handleMessage);
         } catch (Exception e) {
             chatArea.appendText("Connection failed: " + e.getMessage() + "\n");
         }
