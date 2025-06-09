@@ -13,15 +13,6 @@ public class GameSelectionController {
     private final GameClient client = GameClient.getInstance();
 
     @FXML
-    public void initialize() {
-        try {
-            client.connect("localhost", 12345);
-        } catch (Exception e) {
-            System.err.println("Connection error: " + e.getMessage());
-        }
-    }
-
-    @FXML
     public void startMemoryGame(ActionEvent event) {
         loadNickInputView("MEMORY", event);
     }
