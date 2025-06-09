@@ -28,12 +28,8 @@ public class MemoryController {
     private static final int CARD_WIDTH = 80;
     private static final int CARD_HEIGHT = 120;
 
-    public void updateTurn(int playerNumber) {
-        if (turnLabel != null) {
-            turnLabel.setText("Tura gracza " + playerNumber);
-        }
-    }
-
+    private String player1Name = "";
+    private String player2Name = "";
 
     @FXML
     public void initialize() {
@@ -139,22 +135,48 @@ public class MemoryController {
 
 
     public void setScore(String msg) {
-        msg = msg.replace("Server: ", "").replace("Wynik - ", "");
-        String[] parts = msg.split(" ");
-        int p1 = Integer.parseInt(parts[2]);
-        int p2 = Integer.parseInt(parts[5]);
+        msg = msg.replace("Server: ", "").replace("Wynik - ", "").trim();
 
-        player1Score.setText("Gracz 1: " + p1);
-        player2Score.setText("Gracz 2: " + p2);
+        // Przykład: "Jan: 3 Anna: 4"
+        String[] parts = msg.split(" ");
+
+        if (parts.length >= 4) {
+            String player1Name = parts[0].replace(":", "");
+            int player1Points = Integer.parseInt(parts[1]);
+
+            String player2Name = parts[2].replace(":", "");
+            int player2Points = Integer.parseInt(parts[3]);
+
+            player1Score.setText(player1Name + ": " + player1Points);
+            player2Score.setText(player2Name + ": " + player2Points);
+        }
     }
 
     public void setServer(String msg) {
         if (msg.startsWith("Server: Tura gracza ")) {
-            int playerNumber = Integer.parseInt(msg.substring("Server: Tura gracza ".length()).trim());
-            updateTurn(playerNumber);
+            String playerName = msg.substring("Server: Tura gracza ".length()).trim();
+            updateTurn(playerName);
         } else {
             chatArea.appendText(msg + "\n");
         }
     }
 
+    public void updateTurn(String playerNumber) {
+        if (turnLabel != null) {
+            turnLabel.setText("Tura gracza " + playerNumber);
+        }
+    }
+
+    public void setNick(String msg) {
+        if (msg.startsWith("NICKI:")) {
+            String[] names = msg.substring(6).split(",");
+            if (names.length == 2) {
+                player1Name = names[0];
+                player2Name = names[1];
+
+                player1Score.setText(player1Name + ": 0");
+                player2Score.setText(player2Name + ": 0");
+            }
+        }
+    }
 }

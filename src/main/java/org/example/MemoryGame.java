@@ -7,7 +7,6 @@ public class MemoryGame extends Game {
     private final Card[][] board = new Card[3][8];
     private final List<String> flippedPositions = new ArrayList<>();
     private int currentPlayer = 0;
-    private final int[] scores = new int[2];
 
     @Override
     public void startGame() {
@@ -29,9 +28,15 @@ public class MemoryGame extends Game {
             }
         }
 
-        Arrays.fill(scores, 0);
+        for (Player p : players) {
+            p.resetScore();
+        }
+
         broadcast("START:MEMORY");
-        broadcast("Server: Tura gracza 1");
+        String nick1 = players.get(0).getName();
+        String nick2 = players.get(1).getName();
+        broadcast("NICKI:" + nick1 + "," + nick2);
+        broadcast("Server: Tura gracza " + nick1);
     }
 
     @Override
@@ -62,9 +67,11 @@ public class MemoryGame extends Game {
             if (card1.getValue().equals(card2.getValue())) {
                 card1.setMatched(true);
                 card2.setMatched(true);
-                scores[currentPlayer]++;
+                player.addScore(1);
                 broadcast("MATCH:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
-                broadcast("Server: Wynik - Gracz 1: " + scores[0] + " Gracz 2: " + scores[1]);
+                broadcast("Server: Wynik - " +
+                        players.get(0).getName() + ": " + players.get(0).getScore() + " " +
+                        players.get(1).getName() + ": " + players.get(1).getScore());
 
                 if (isGameFinished()) {
                     endGame();
@@ -79,7 +86,8 @@ public class MemoryGame extends Game {
                 card2.setFlipped(false);
                 broadcast("HIDE:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
                 currentPlayer = 1 - currentPlayer;
-                broadcast("Server: Tura gracza " + (currentPlayer + 1));
+                Player current = players.get(currentPlayer);
+                broadcast("Server: Tura gracza " + current.getName());
             }
             flippedPositions.clear();
         }
@@ -87,10 +95,18 @@ public class MemoryGame extends Game {
 
     @Override
     public void endGame() {
-        String p1 = players.get(0).getName();
-        String p2 = players.get(1).getName();
-        String winnerName = scores[0] > scores[1] ? p1 : scores[1] > scores[0] ? p2 : "Remis";
-        ReportWriter.logGameResult(winnerName, p1, p2);
+        Player p1 = players.get(0);
+        Player p2 = players.get(1);
+        String winnerName;
+
+        if (p1.getScore() > p2.getScore()) {
+            winnerName = p1.getName();
+        } else if (p2.getScore() > p1.getScore()) {
+            winnerName = p2.getName();
+        } else {
+            winnerName = "Remis";
+        }
+        ReportWriter.logGameResult(winnerName,p1.getName(), p2.getName());
         broadcast("Server: Gra zakończona! Zwycięzca: " + winnerName);
     }
 

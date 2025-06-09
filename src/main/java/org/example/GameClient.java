@@ -109,6 +109,11 @@ public class GameClient {
                 memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.setServer(message);
             });
+        } else if (message.startsWith("NICKI:")) {
+            Platform.runLater(() -> {
+                memoryController = manager.getController("memory", MemoryController.class);
+                memoryController.setNick(message);
+            });
         }
     }
 }

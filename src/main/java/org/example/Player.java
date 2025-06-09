@@ -8,6 +8,9 @@ public class Player {
     private final Socket socket;
     private final PrintWriter out;
 
+
+    private int score = 0;
+
     public Player(String name, Socket socket, PrintWriter out) {
         this.name = name;
         this.socket = socket;
@@ -32,5 +35,17 @@ public class Player {
 
     public void sendMessage(String msg) {
         out.println(msg);
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addScore(int score) {
+        this.score += score;
+    }
+
+    public void resetScore() {
+        score = 0;
     }
 }
