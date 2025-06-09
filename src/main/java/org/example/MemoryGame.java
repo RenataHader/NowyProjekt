@@ -44,6 +44,13 @@ public class MemoryGame extends Game {
         int playerId = players.indexOf(player);
         if (playerId != currentPlayer) return;
 
+        if (moveData.equals("TIMEOUT")) {
+            currentPlayer = 1 - currentPlayer;
+            Player current = players.get(currentPlayer);
+            broadcast("Server: Tura gracza " + current.getName());
+            return;
+        }
+
         String[] coords = moveData.split(",");
         if (coords.length != 2) return;
 

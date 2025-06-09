@@ -202,6 +202,7 @@ public class MemoryController {
             if (timeLeft <= 0) {
                 turnTimer.stop();
                 timerLabel.setText("Czas minął!");
+                client.sendMessage("TIMEOUT");
             }
         }));
 
