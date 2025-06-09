@@ -55,11 +55,6 @@ public class MemoryController {
     public void initialize() {
         backImage = new Image(getClass().getResource("/images/card_back.png").toExternalForm());
         initGrid();
-        try {
-            client.connect("localhost", 12345);
-        } catch (Exception e) {
-            chatArea.appendText("Connection failed: " + e.getMessage() + "\n");
-        }
     }
 
     private void initGrid() {
@@ -110,7 +105,7 @@ public class MemoryController {
             }
             view.setFitWidth(CARD_WIDTH);
             view.setFitHeight(CARD_HEIGHT);
-            view.setPreserveRatio(false); // 🚨 ważne: WYŁĄCZ proporcje
+            view.setPreserveRatio(false);
             view.setSmooth(false);
 
             flipIn.play();

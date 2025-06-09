@@ -33,6 +33,7 @@ public class GameClient {
     }
 
     public void connect(String host, int port) throws IOException {
+        if (socket != null && socket.isConnected()) return;
         socket = new Socket(host, port);
         out = new PrintWriter(socket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
