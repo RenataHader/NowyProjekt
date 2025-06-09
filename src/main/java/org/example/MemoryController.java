@@ -1,7 +1,9 @@
 package org.example;
 
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -18,12 +20,16 @@ public class MemoryController {
     @FXML private Label player1Score;
     @FXML private Label player2Score;
     @FXML private Label turnLabel;
+    @FXML private Label timerLabel;
 
 
     private final Button[][] buttons = new Button[3][8];
     private final ImageView[][] cardImages = new ImageView[3][8];
     private final GameClient client = GameClient.getInstance();
     private Image backImage;
+
+    private Timeline turnTimer;
+    private int timeLeft = 20;
 
     private static final int CARD_WIDTH = 80;
     private static final int CARD_HEIGHT = 120;
@@ -156,6 +162,7 @@ public class MemoryController {
         if (msg.startsWith("Server: Tura gracza ")) {
             String playerName = msg.substring("Server: Tura gracza ".length()).trim();
             updateTurn(playerName);
+            startTurnTimer();
         } else {
             chatArea.appendText(msg + "\n");
         }
@@ -179,4 +186,27 @@ public class MemoryController {
             }
         }
     }
+
+    private void startTurnTimer() {
+        if (turnTimer != null) {
+            turnTimer.stop();
+        }
+
+        timeLeft = 20;
+        timerLabel.setText("Czas: " + timeLeft + "s");
+
+        turnTimer = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            timeLeft--;
+            timerLabel.setText("Czas: " + timeLeft + "s");
+
+            if (timeLeft <= 0) {
+                turnTimer.stop();
+                timerLabel.setText("Czas minął!");
+            }
+        }));
+
+        turnTimer.setCycleCount(Timeline.INDEFINITE);
+        turnTimer.play();
+    }
+
 }

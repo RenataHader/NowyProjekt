@@ -12,8 +12,8 @@
 
     <ImageView fx:id="backgroundImage"
                preserveRatio="false"
-               fitWidth="1920"
-               fitHeight="1080"
+               fitWidth="1200"
+               fitHeight="650"
                pickOnBounds="true">
         <Image url="@/images/table.png" />
     </ImageView>
@@ -62,9 +62,8 @@
 
         <center>
             <GridPane fx:id="gameGrid"
-                      hgap="5" vgap="5"
-                      alignment="CENTER"
-                      style="-fx-padding: 20;" />
+                      hgap="20" vgap="20"
+                      alignment="CENTER"/>
         </center>
 
         <bottom>

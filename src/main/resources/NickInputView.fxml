@@ -11,7 +11,7 @@
            alignment="CENTER">
 
     <!-- Tło -->
-    <ImageView fitWidth="1000" fitHeight="700" preserveRatio="false">
+    <ImageView fitWidth="1000" fitHeight="650" preserveRatio="false">
         <image>
             <Image url="@./images/table.png" />
         </image>
