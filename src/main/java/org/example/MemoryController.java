@@ -43,8 +43,6 @@ public class MemoryController {
         initGrid();
         try {
             client.connect("localhost", 12345);
-            client.sendMessage("GAME:MEMORY");
-            // client.setOnMessage(this::handleMessage);
         } catch (Exception e) {
             chatArea.appendText("Connection failed: " + e.getMessage() + "\n");
         }
@@ -96,6 +94,11 @@ public class MemoryController {
             } else {
                 view.setImage(backImage);
             }
+            view.setFitWidth(CARD_WIDTH);
+            view.setFitHeight(CARD_HEIGHT);
+            view.setPreserveRatio(false); // 🚨 ważne: WYŁĄCZ proporcje
+            view.setSmooth(false);
+
             flipIn.play();
         });
 
