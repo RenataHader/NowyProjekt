@@ -70,7 +70,8 @@ public class NickInputController {
     private void proceedToGame(String nickname, int playerCount) {
         try {
             GameClient client = GameClient.getInstance();
-            client.connect("localhost", 12345);
+            NetworkConfigReader config = new NetworkConfigReader();
+            client.connect(config.getIp(), config.getPort());
             client.sendMessage("NICK:" + nickname);
 
             ViewManager manager = ViewManager.getInstance();

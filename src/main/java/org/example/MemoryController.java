@@ -184,26 +184,24 @@ public class MemoryController {
         }
     }
 
+
     public void showEndGameDialog(String winnerName) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Gra zakończona");
-        alert.setHeaderText("Zwycięzca: " + winnerName);
-        alert.setContentText("Czy chcesz zagrać jeszcze raz?");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EndGameView.fxml"));
+            Scene scene = new Scene(loader.load());
 
-        ButtonType yes = new ButtonType("Tak");
-        ButtonType no = new ButtonType("Nie");
+            // Pobierz kontroler i ustaw nazwę zwycięzcy
+            EndGameController controller = loader.getController();
+            controller.setWinnerName(winnerName);
 
-        alert.getButtonTypes().setAll(yes, no);
+            // Przełącz na nową scenę
+            Stage stage = (Stage) gameGrid.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
 
-        alert.showAndWait().ifPresent(response -> {
-            if (response == yes) {
-                goToGameSelectionView();
-            } else {
-                // Zamyka aplikację
-                Stage stage = (Stage) gameGrid.getScene().getWindow();
-                stage.close();
-            }
-        });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void goToGameSelectionView() {
