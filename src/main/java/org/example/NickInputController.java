@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 public class NickInputController {
 
     @FXML private Label titleLabel;
+    @FXML private Label playerLabel;
     @FXML private TextField nicknameField;
     @FXML private TextField playerCountField;
 
@@ -18,9 +19,12 @@ public class NickInputController {
         if ("CHARADES".equalsIgnoreCase(selectedGame)) {
             playerCountField.setVisible(true);
             titleLabel.setText("Podaj nick i liczbę graczy");
+            playerLabel.setVisible(true);
+            playerLabel.setText("Liczba graczy 2 - 6:");
         } else if ("MEMORY".equalsIgnoreCase(selectedGame)) {
             playerCountField.setVisible(false);
             titleLabel.setText("Podaj nick");
+            playerLabel.setVisible(false);
         }
     }
 

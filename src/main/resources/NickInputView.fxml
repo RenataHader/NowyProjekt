@@ -20,7 +20,7 @@
     <!-- Główna zawartość -->
     <VBox alignment="CENTER" spacing="15">
         <!-- Tytuł -->
-        <Label fx:id="titleLabel" text="Podaj nick i liczbę graczy"
+        <Label fx:id="titleLabel"
                style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
 
         <!-- Pole na nick -->
@@ -38,7 +38,7 @@
 
         <!-- Wybór liczby graczy (widoczne tylko dla Charades) -->
         <VBox fx:id="playerCountContainer" alignment="CENTER" spacing="5">
-            <Label text="Liczba graczy (2-6):" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+            <Label fx:id="playerLabel" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
             <TextField fx:id="playerCountField"
                        promptText="Wprowadź liczbę"
                        style="-fx-font-size: 14px;

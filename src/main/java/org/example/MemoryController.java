@@ -1,10 +1,14 @@
 package org.example;
 
+import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 
 
 public class MemoryController {
@@ -17,10 +21,12 @@ public class MemoryController {
 
 
     private final Button[][] buttons = new Button[3][8];
-    private GameClient client = GameClient.getInstance();
+    private final ImageView[][] cardImages = new ImageView[3][8];
+    private final GameClient client = GameClient.getInstance();
+    private Image backImage;
 
-    private final Image cardBackImage = new Image(getClass().getResource("/images/card_back.png").toExternalForm());
-    private final ImageView[][] cardViews = new ImageView[3][8];
+    private static final int CARD_WIDTH = 80;
+    private static final int CARD_HEIGHT = 120;
 
     public void updateTurn(int playerNumber) {
         if (turnLabel != null) {
@@ -31,6 +37,7 @@ public class MemoryController {
 
     @FXML
     public void initialize() {
+        backImage = new Image(getClass().getResource("/images/card_back.png").toExternalForm());
         initGrid();
         try {
             client.connect("localhost", 12345);
@@ -42,41 +49,66 @@ public class MemoryController {
     }
 
     private void initGrid() {
+        gameGrid.getChildren().clear();
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
-                Button btn = new Button();
-                btn.setPrefSize(60, 90);
-                btn.setFocusTraversable(false);
-                btn.setStyle("-fx-background-color: transparent;");
+                ImageView imageView = new ImageView(backImage);
+                imageView.setFitWidth(CARD_WIDTH);
+                imageView.setFitHeight(CARD_HEIGHT);
+                imageView.setPreserveRatio(true);
+                imageView.setSmooth(false);
 
-                ImageView imgView = new ImageView(cardBackImage);
-                imgView.setFitWidth(60);
-                imgView.setFitHeight(90);
-                imgView.setPreserveRatio(false);
-
-                btn.setGraphic(imgView);
-                buttons[i][j] = btn;
-                cardViews[i][j] = imgView;
+                // Przezroczysty przycisk nad obrazkiem
+                Button invisibleButton = new Button();
+                invisibleButton.setOpacity(0);
+                invisibleButton.setPrefSize(CARD_WIDTH, CARD_HEIGHT);
+                invisibleButton.setFocusTraversable(false);
 
                 int row = i, col = j;
-                btn.setOnAction(e -> client.sendMessage(row + "," + col));
+                invisibleButton.setOnAction(e -> client.sendMessage(row + "," + col));
 
-                gameGrid.add(btn, j, i);
+                StackPane cardPane = new StackPane(imageView, invisibleButton);
+                buttons[i][j] = invisibleButton;
+                cardImages[i][j] = imageView;
+
+                gameGrid.add(cardPane, j, i);
             }
         }
     }
 
+    private void flipCard(int row, int col, Image frontImage, boolean showFront) {
+        ImageView view = cardImages[row][col];
+
+        RotateTransition flipOut = new RotateTransition(Duration.millis(150), view);
+        flipOut.setFromAngle(0);
+        flipOut.setToAngle(90);
+
+        RotateTransition flipIn = new RotateTransition(Duration.millis(150), view);
+        flipIn.setFromAngle(270);
+        flipIn.setToAngle(360);
+
+        flipOut.setOnFinished(event -> {
+            if (showFront) {
+                view.setImage(frontImage);
+            } else {
+                view.setImage(backImage);
+            }
+            flipIn.play();
+        });
+
+        flipOut.play();
+    }
 
     public void turnCard(String msg) {
         String[] parts = msg.substring(7).split("=");
         String[] coords = parts[0].split(",");
         int r = Integer.parseInt(coords[0]);
         int c = Integer.parseInt(coords[1]);
-        String value = parts[1];
+        int cardId = Integer.parseInt(parts[1]);
 
-        String imagePath = "/images/card_" + value + ".png";
-        Image frontImage = new Image(getClass().getResource(imagePath).toExternalForm());
-        cardViews[r][c].setImage(frontImage);
+        Image frontImage = new Image(getClass().getResource("/images/card_" + cardId + ".png").toExternalForm());
+        flipCard(r, c, frontImage, true);
         buttons[r][c].setDisable(true);
     }
 
@@ -86,8 +118,7 @@ public class MemoryController {
             String[] coords = pos.split(",");
             int r = Integer.parseInt(coords[0]);
             int c = Integer.parseInt(coords[1]);
-            buttons[r][c].setStyle("-fx-background-color: lightgreen;");
-            buttons[r][c].setDisable(true);
+            buttons[r][c].setStyle("-fx-border-color: lightgreen; -fx-border-width: 3;");
         }
     }
 
@@ -96,8 +127,13 @@ public class MemoryController {
             String[] coords = pos.split(",");
             int r = Integer.parseInt(coords[0]);
             int c = Integer.parseInt(coords[1]);
-            cardViews[r][c].setImage(cardBackImage);
-            buttons[r][c].setDisable(false);
+
+            PauseTransition pause = new PauseTransition(Duration.seconds(0.4));
+            pause.setOnFinished(e -> {
+                flipCard(r, c, null, false);
+                buttons[r][c].setDisable(false);
+            });
+            pause.play();
         }
     }
 
