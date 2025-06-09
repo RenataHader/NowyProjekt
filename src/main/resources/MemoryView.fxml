@@ -24,7 +24,7 @@
             <StackPane prefHeight="100" style="-fx-padding: 20 30 0 30;">
 
                 <!-- Napis tury idealnie na środku -->
-                <Label fx:id="turnLabel" text="Tura gracza 1"
+                <Label fx:id="turnLabel" text="Oczekiwanie na drugiego gracza"
                        style="-fx-text-fill: black; -fx-font-size: 30px; -fx-font-weight: bold;" />
 
                 <!-- Timer po prawej -->
@@ -50,10 +50,10 @@
                 <Label text="Wyniki:"
                        style="-fx-text-fill: white;-fx-font-size: 24px; -fx-font-weight: bold;" />
                 <Separator/>
-                <Label fx:id="player1Score" text="Gracz 1: 0"
+                <Label fx:id="player1Score" text=""
                        style="-fx-text-fill: white; -fx-font-size: 18px;" />
 
-                <Label fx:id="player2Score" text="Gracz 2: 0"
+                <Label fx:id="player2Score" text=""
                        style="-fx-text-fill: white; -fx-font-size: 18px;" />
 
 
