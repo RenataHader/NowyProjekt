@@ -7,17 +7,75 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.CharadesGuessController"
-      spacing="10" alignment="CENTER" prefWidth="600" prefHeight="500">
+<?import javafx.scene.image.Image?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.CharadesGuessController">
 
-    <Label fx:id="resultLabel" text="Zgadnij rysunek gracza:" style="-fx-font-size: 16px;"/>
+    <!-- Tło opcjonalne (można usunąć jeśli niepotrzebne) -->
+    <ImageView fx:id="backgroundImage"
+               preserveRatio="false"
+               pickOnBounds="true"
+               StackPane.alignment="CENTER">
+        <image>
+            <Image url="@/images/table.png"/>
+        </image>
+    </ImageView>
 
-    <ImageView fx:id="drawingImage" fitWidth="400" fitHeight="300" preserveRatio="true"
-               style="-fx-border-color: black;"/>
 
-    <Label text="Twoja odpowiedź:"/>
-    <TextField fx:id="guessField" prefWidth="300"/>
-    <Button text="Zgadnij" onAction="#submitGuess" minWidth="100"/>
+    <!-- Główna struktura -->
+    <BorderPane style="-fx-background-color: transparent; ">
 
-</VBox>
+        <top>
+            <StackPane prefHeight="100" style="-fx-padding: 20 30 0 20;">
+                <Label fx:id="resultLabel"
+                       text="Zgadnij rysunek gracza:"
+                       style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;"
+                       StackPane.alignment="CENTER"/>
+
+                <Label fx:id="timerLabel"
+                       text="Czas: 30s"
+                       style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;"
+                       StackPane.alignment="TOP_RIGHT"/>
+            </StackPane>
+        </top>
+
+        <left>
+            <VBox fx:id="scorePanel"
+                  prefWidth="200"
+                  spacing="10"
+                  alignment="TOP_CENTER"
+                  style="-fx-background-color: rgba(0,0,0,0.5); -fx-padding: 20;">
+                <Label text="Wyniki:"
+                       style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Separator/>
+            </VBox>
+        </left>
+
+        <!-- Centrum - Obraz i zgadywanie -->
+        <center>
+            <VBox alignment="CENTER"
+                  spacing="20"
+                  style="-fx-padding: 60;">
+
+                <ImageView fx:id="drawingImage"
+                           fitWidth="800"
+                           fitHeight="500"
+                           preserveRatio="true"
+                           style="-fx-border-color: black;" />
+
+                <Label text="Twoja odpowiedź:"
+                       style="-fx-text-fill: white; -fx-font-size: 20px;" />
+
+                <TextField fx:id="guessField"
+                           prefWidth="300"
+                           style="-fx-font-size: 16px;" />
+
+                <Button text="Zgadnij"
+                        onAction="#submitGuess"
+                        minWidth="150"
+                        style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>

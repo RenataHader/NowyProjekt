@@ -153,9 +153,8 @@ public class MemoryController {
 
 
     public void setScore(String msg) {
-        msg = msg.replace("Server: ", "").replace("Wynik - ", "").trim();
+        msg = msg.replace("Wynik - ", "").trim();
 
-        // Przykład: "Jan: 3 Anna: 4"
         String[] parts = msg.split(" ");
 
         if (parts.length >= 4) {
@@ -171,7 +170,7 @@ public class MemoryController {
     }
 
     public void setServer(String msg) {
-        System.out.println("OD SERWERA: " + msg); // 👈 Dodaj to
+        System.out.println("OD SERWERA: " + msg);
 
         if (msg.startsWith("Server: Tura gracza ")) {
             String playerName = msg.substring("Server: Tura gracza ".length()).trim();
@@ -179,7 +178,7 @@ public class MemoryController {
             startTurnTimer();
         } else if (msg.startsWith("Server: Gra zakończona! Zwycięzca: ")) {
             String winnerName = msg.substring("Server: Gra zakończona! Zwycięzca: ".length()).trim();
-            showEndGameDialog(winnerName); // 👈 Czy wywołuje się?
+            showEndGameDialog(winnerName);
         } else {
             chatArea.appendText(msg + "\n");
         }
