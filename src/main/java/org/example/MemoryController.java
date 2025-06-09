@@ -4,23 +4,37 @@ import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
+import java.util.Optional;
 
 
 public class MemoryController {
-    @FXML private GridPane gameGrid;
-    @FXML private TextArea chatArea;
-    @FXML private Label scoreLabel;
-    @FXML private Label player1Score;
-    @FXML private Label player2Score;
-    @FXML private Label turnLabel;
-    @FXML private Label timerLabel;
+    @FXML
+    private GridPane gameGrid;
+    @FXML
+    private TextArea chatArea;
+    @FXML
+    private Label scoreLabel;
+    @FXML
+    private Label player1Score;
+    @FXML
+    private Label player2Score;
+    @FXML
+    private Label turnLabel;
+    @FXML
+    private Label timerLabel;
 
 
     private final Button[][] buttons = new Button[3][8];
@@ -139,9 +153,8 @@ public class MemoryController {
 
 
     public void setScore(String msg) {
-        msg = msg.replace("Server: ", "").replace("Wynik - ", "").trim();
+        msg = msg.replace("Wynik - ", "").trim();
 
-        // Przykład: "Jan: 3 Anna: 4"
         String[] parts = msg.split(" ");
 
         if (parts.length >= 4) {
@@ -157,14 +170,52 @@ public class MemoryController {
     }
 
     public void setServer(String msg) {
+        System.out.println("OD SERWERA: " + msg);
+
         if (msg.startsWith("Server: Tura gracza ")) {
             String playerName = msg.substring("Server: Tura gracza ".length()).trim();
             updateTurn(playerName);
             startTurnTimer();
+        } else if (msg.startsWith("Server: Gra zakończona! Zwycięzca: ")) {
+            String winnerName = msg.substring("Server: Gra zakończona! Zwycięzca: ".length()).trim();
+            showEndGameDialog(winnerName);
         } else {
             chatArea.appendText(msg + "\n");
         }
     }
+
+
+    public void showEndGameDialog(String winnerName) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EndGameView.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            // Pobierz kontroler i ustaw nazwę zwycięzcy
+            EndGameController controller = loader.getController();
+            controller.setWinnerName(winnerName);
+
+            // Przełącz na nową scenę
+            Stage stage = (Stage) gameGrid.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void goToGameSelectionView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameSelectionView.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) gameGrid.getScene().getWindow(); // Pobiera aktualne okno
+            stage.setScene(scene); // Ustawia nową scenę
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void updateTurn(String playerNumber) {
         if (turnLabel != null) {

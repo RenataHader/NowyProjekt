@@ -66,53 +66,72 @@ public class GameClient {
     private void messageHandler(String message) {
 
         ViewManager manager = ViewManager.getInstance();
-        if(message.startsWith("START:CHARADES")){
 
-        } else if (message.startsWith("START_GUESSING")) {
+        guessController = manager.getController("charadesGuess", CharadesGuessController.class);
+        drawController = manager.getController("charadesDraw", CharadesDrawController.class);
+        memoryController = manager.getController("memory", MemoryController.class);
+
+        if (message.startsWith("START_GUESSING")) {
             Platform.runLater(() -> {
                 manager.changeView("charadesGuess");
-                guessController = manager.getController("charadesGuess", CharadesGuessController.class);
                 guessController.prepareNewRound();
             });
         } else if (message.startsWith("DRAWING_FROM:")) {
             Platform.runLater(() -> {
-                guessController = manager.getController("charadesGuess", CharadesGuessController.class);
                 guessController.processShowPicture(message);
             });
         } else if (message.startsWith("DRAWING_TO:")) {
             Platform.runLater(() -> {
                 manager.changeView("charadesDraw");
-                drawController = manager.getController("charadesDraw", CharadesDrawController.class);
                 drawController.prepareNewRound();
+            });
+        } else if (message.startsWith("WORD:")) {
+            String word = message.substring(5);
+            Platform.runLater(() -> {
+                drawController.setWord(word);
+            });
+        } else if (message.startsWith("SCORES:")) {
+            String scoreData = message.substring(7);
+            Platform.runLater(() -> {
+                if (drawController != null) {
+                    drawController.setScore(scoreData);
+                }
+                if (guessController != null) {
+                    guessController.setScore(scoreData);
+                }
+            });
+        } else if (message.startsWith("NICKICH:")) {
+            String data = message.substring(8);
+            Platform.runLater(() -> {
+                if (drawController != null) {
+                    drawController.setNick(data);
+                }
+                if (guessController != null) {
+                    guessController.setNick(data);
+                }
             });
         } else if (message.startsWith("UPDATE:")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.turnCard(message);
             });
         } else if (message.startsWith("MATCH:")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.matchCard(message);
             });
         } else if (message.startsWith("HIDE:")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.backCard(message);
             });
-        } else if (message.startsWith("Server: Wynik - ")) {
+        } else if (message.startsWith("Wynik - ")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.setScore(message);
             });
-        } else if (message.startsWith("Server:")) {
+        } else if (message.startsWith("Tura gracza ")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.setServer(message);
             });
         } else if (message.startsWith("NICKI:")) {
             Platform.runLater(() -> {
-                memoryController = manager.getController("memory", MemoryController.class);
                 memoryController.setNick(message);
             });
         }

@@ -9,29 +9,34 @@ import java.util.concurrent.*;
 
 public class GameServer {
 
-    private static final int PORT = 12345;
-    private static final Queue<ClientHandler> handlers = new ConcurrentLinkedQueue<>();
     private static final Map<String, List<GameRoom>> waitingRooms = new ConcurrentHashMap<>();
     private static final Map<String, GameRoom> activeRooms = new ConcurrentHashMap<>();
     private static final ExecutorService pool = Executors.newCachedThreadPool();
+    private static final Queue<ClientHandler> handlers = new ConcurrentLinkedQueue<>();
 
     public static void main(String[] args) {
-        System.out.println("Serwer działa na porcie " + PORT);
+        try {
+            NetworkConfigReader config = new NetworkConfigReader();
+            int port = config.getPort();
+            System.out.println("Serwer działa na porcie " + port);
 
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            while (true) {
-                Socket socket = serverSocket.accept();
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                Player player = new Player("Anonim", socket, out);
+            try (ServerSocket serverSocket = new ServerSocket(port)) {
+                while (true) {
+                    Socket socket = serverSocket.accept();
+                    PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                    Player player = new Player("Anonim", socket, out);
 
-
-                ClientHandler handler = new ClientHandler(socket, player);
-                handlers.add(handler);
-                pool.execute(handler);
-                System.out.println("Nowy gracz połączony: " + "Anonim");
+                    ClientHandler handler = new ClientHandler(socket, player);
+                    handlers.add(handler);
+                    pool.execute(handler);
+                    System.out.println("Nowy gracz połączony: " + "Anonim");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("Błąd podczas uruchamiania serwera: " + e.getMessage());
+            System.exit(1);
         }
     }
 

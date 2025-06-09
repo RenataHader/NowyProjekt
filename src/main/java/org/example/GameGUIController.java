@@ -5,5 +5,4 @@ public interface GameGUIController {
     void setNick(String msg);
     void setScore(String msg);
     void startTurnTimer();
-    void updateTurn(String playerName);
 }

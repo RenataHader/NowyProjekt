@@ -1,8 +1,9 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class CharadesGame extends Game {
 
@@ -13,6 +14,7 @@ public class CharadesGame extends Game {
     private int drawingsSubmitted = 0;
     private int currentRound = 1;
     private int totalRounds  = 4;
+    private Map<Player, List<String>> playerWords = new HashMap<>();
 
     public CharadesGame(int expectedPlayerCount) {
         this.expectedPlayerCount = expectedPlayerCount;
@@ -22,7 +24,15 @@ public class CharadesGame extends Game {
 
     @Override
     public void startGame() {
-        broadcast("START:CHARADES");
+        assignWordsToPlayers();
+        for (Player p : players) {
+            p.resetScore();
+        }
+        sendNicknames();
+        sendScoresToAll();
+        broadcast("Server: Gra rozpoczęta – rysujcie przez 60 sekund!");
+        sendWordsForCurrentRound();
+        broadcast("DRAWING_TO:");
     }
 
     @Override
@@ -86,25 +96,44 @@ public class CharadesGame extends Game {
 
     private void processGuess(Player guesser, String targetSenderName, String guessText) {
         String key = guesser.getName() + "->" + targetSenderName;
-        if (!guessedMap.containsKey(key)) {
-            guessedMap.put(key, true);
-            guesser.sendMessage("RESULT: Zgadłeś rysunek " + targetSenderName + ": " + guessText);
+        if (guessedMap.containsKey(key)) return;
+
+        guessedMap.put(key, true);
+
+        Player target = players.stream()
+                .filter(p -> p.getName().equals(targetSenderName))
+                .findFirst()
+                .orElse(null);
+
+        if (target == null) return;
+
+        List<String> words = playerWords.get(target);
+        String expectedWord = (words != null && currentRound - 1 < words.size()) ? words.get(currentRound - 1) : null;
+
+        if (expectedWord != null && isCorrectGuess(expectedWord, guessText)) {
+            guesser.addScore(1);
+            target.addScore(1);
+
+            guesser.sendMessage("RESULT: Poprawnie! Hasło gracza " + targetSenderName + ": " + expectedWord);
+            sendScoresToAll();
+        } else {
+            guesser.sendMessage("RESULT: Niepoprawnie! Spróbuj dalej.");
         }
 
         int totalGuessesNeeded = expectedPlayerCount * (expectedPlayerCount - 1);
-
         if (guessedMap.size() >= totalGuessesNeeded) {
             if (currentRound < totalRounds) {
                 broadcast("Server: Wszyscy gracze zakończyli zgadywanie w tej turze!");
                 resetGameState();
                 currentRound++;
+                sendWordsForCurrentRound();
                 broadcast("DRAWING_TO:");
             } else {
                 endGame();
             }
         }
-
     }
+
     private void resetGameState() {
         for (int i = 0; i < expectedPlayerCount; i++) {
             drawings[i] = null;
@@ -122,6 +151,59 @@ public class CharadesGame extends Game {
 
     public int getExpectedPlayerCount() {
         return expectedPlayerCount;
+    }
+
+    private void assignWordsToPlayers() {
+        try {
+            List<String> allWords = Files.readAllLines(Paths.get("src/main/resources/words.txt"));
+            Collections.shuffle(allWords);
+            int totalWordsNeeded = expectedPlayerCount * totalRounds;
+
+            if (allWords.size() < totalWordsNeeded) {
+                throw new RuntimeException("Za mało słów w bazie!");
+            }
+
+            int index = 0;
+            for (Player player : players) {
+                List<String> wordsForPlayer = new ArrayList<>();
+                for (int i = 0; i < totalRounds; i++) {
+                    wordsForPlayer.add(allWords.get(index++));
+                }
+                playerWords.put(player, wordsForPlayer);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendWordsForCurrentRound() {
+        for (Player player : players) {
+            List<String> words = playerWords.get(player);
+            if (words != null && currentRound - 1 < words.size()) {
+                String word = words.get(currentRound - 1);
+                player.sendMessage("WORD:" + word);
+            }
+        }
+    }
+
+    private boolean isCorrectGuess(String expected, String actual) {
+        return expected.trim().equalsIgnoreCase(actual.trim());
+    }
+
+    private void sendScoresToAll() {
+        StringBuilder sb = new StringBuilder("SCORES:");
+        for (Player p : players) {
+            sb.append(p.getName()).append("=").append(p.getScore()).append(",");
+        }
+        broadcast(sb.toString());
+    }
+
+    private void sendNicknames() {
+        StringBuilder sb = new StringBuilder("NICKICH:");
+        for (Player p : players) {
+            sb.append(p.getName()).append(",");
+        }
+        broadcast(sb.toString());
     }
 
 }

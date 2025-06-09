@@ -36,7 +36,7 @@ public class MemoryGame extends Game {
         String nick1 = players.get(0).getName();
         String nick2 = players.get(1).getName();
         broadcast("NICKI:" + nick1 + "," + nick2);
-        broadcast("Server: Tura gracza " + nick1);
+        broadcast("Tura gracza " + nick1);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class MemoryGame extends Game {
         if (moveData.equals("TIMEOUT")) {
             currentPlayer = 1 - currentPlayer;
             Player current = players.get(currentPlayer);
-            broadcast("Server: Tura gracza " + current.getName());
+            broadcast("Tura gracza " + current.getName());
             return;
         }
 
@@ -76,7 +76,7 @@ public class MemoryGame extends Game {
                 card2.setMatched(true);
                 player.addScore(1);
                 broadcast("MATCH:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
-                broadcast("Server: Wynik - " +
+                broadcast("Wynik - " +
                         players.get(0).getName() + ": " + players.get(0).getScore() + " " +
                         players.get(1).getName() + ": " + players.get(1).getScore());
 
@@ -94,7 +94,7 @@ public class MemoryGame extends Game {
                 broadcast("HIDE:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
                 currentPlayer = 1 - currentPlayer;
                 Player current = players.get(currentPlayer);
-                broadcast("Server: Tura gracza " + current.getName());
+                broadcast("Tura gracza " + current.getName());
             }
             flippedPositions.clear();
         }
