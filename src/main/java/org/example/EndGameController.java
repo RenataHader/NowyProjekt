@@ -48,12 +48,9 @@ public class EndGameController {
 
     private void goToGameSelectionView() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameSelectionView.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) titleLabel.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
+            ViewManager manager = ViewManager.getInstance();
+            manager.changeView("main");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

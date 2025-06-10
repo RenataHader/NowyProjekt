@@ -39,6 +39,7 @@ public class ViewManager {
         loadView("charadesDraw", "/CharadesDraw.fxml", CharadesDrawController.class);
         loadView("charadesGuess", "/CharadesGuess.fxml", CharadesGuessController.class);
         loadView("memory", "/MemoryView.fxml", MemoryController.class);
+        loadView("endGame", "/EndGameView.fxml", EndGameController.class);
     }
 
     public static synchronized ViewManager getInstance() {

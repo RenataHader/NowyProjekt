@@ -32,6 +32,8 @@ public class MemoryGame extends Game {
             p.resetScore();
         }
 
+        printBoard();
+
         broadcast("START:MEMORY");
         String nick1 = players.get(0).getName();
         String nick2 = players.get(1).getName();
@@ -114,7 +116,7 @@ public class MemoryGame extends Game {
             winnerName = "Remis";
         }
         ReportWriter.logGameResult(winnerName,p1.getName(), p2.getName());
-        broadcast("Server: Gra zakończona! Zwycięzca: " + winnerName);
+        broadcast("Gra zakończona! Zwycięzca: " + winnerName);
     }
 
     private boolean isGameFinished() {
@@ -131,4 +133,17 @@ public class MemoryGame extends Game {
             p.sendMessage(message);
         }
     }
+
+    private void printBoard() {
+        System.out.println("Aktualna plansza:");
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                Card card = board[i][j];
+                String value = card != null ? card.getValue() : " ";
+                System.out.print("[" + value + "] ");
+            }
+            System.out.println();
+        }
+    }
+
 }

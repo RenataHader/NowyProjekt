@@ -170,52 +170,33 @@ public class MemoryController {
     }
 
     public void setServer(String msg) {
-        System.out.println("OD SERWERA: " + msg);
 
-        if (msg.startsWith("Server: Tura gracza ")) {
-            String playerName = msg.substring("Server: Tura gracza ".length()).trim();
+        if (msg.startsWith("Tura gracza ")) {
+            String playerName = msg.substring("Tura gracza ".length()).trim();
             updateTurn(playerName);
             startTurnTimer();
-        } else if (msg.startsWith("Server: Gra zakończona! Zwycięzca: ")) {
-            String winnerName = msg.substring("Server: Gra zakończona! Zwycięzca: ".length()).trim();
-            showEndGameDialog(winnerName);
-        } else {
-            chatArea.appendText(msg + "\n");
         }
+
     }
 
+    public void endGame(String msg) {
+        if (msg.startsWith("Gra zakończona! Zwycięzca: ")) {
+            String winnerName = msg.substring("Gra zakończona! Zwycięzca: ".length()).trim();
+            showEndGameDialog(winnerName);
+        }
+    }
 
     public void showEndGameDialog(String winnerName) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EndGameView.fxml"));
-            Scene scene = new Scene(loader.load());
+            ViewManager manager = ViewManager.getInstance();
+            EndGameController endGameController = manager.getController("endGame", EndGameController.class);
+            manager.changeView("endGame");
+            endGameController.setWinnerName(winnerName);
 
-            // Pobierz kontroler i ustaw nazwę zwycięzcy
-            EndGameController controller = loader.getController();
-            controller.setWinnerName(winnerName);
-
-            // Przełącz na nową scenę
-            Stage stage = (Stage) gameGrid.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    private void goToGameSelectionView() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameSelectionView.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) gameGrid.getScene().getWindow(); // Pobiera aktualne okno
-            stage.setScene(scene); // Ustawia nową scenę
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     public void updateTurn(String playerNumber) {
         if (turnLabel != null) {

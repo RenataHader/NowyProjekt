@@ -30,7 +30,6 @@ public class CharadesGame extends Game {
         }
         sendNicknames();
         sendScoresToAll();
-        broadcast("Server: Gra rozpoczęta – rysujcie przez 60 sekund!");
         sendWordsForCurrentRound();
         broadcast("DRAWING_TO:");
     }
@@ -60,7 +59,7 @@ public class CharadesGame extends Game {
         }
 
         ReportWriter.logGameResult("Wszyscy zakończyli zgadywanie", summary.toString(), "");
-        broadcast("Server: Gra w Kalambury zakończona!");
+        broadcast("Gra w Kalambury zakończona!");
 
         resetGameState();
 
@@ -74,7 +73,7 @@ public class CharadesGame extends Game {
         drawingsSubmitted++;
 
         Player sender = players.get(playerId);
-        System.out.println("✔️ Otrzymano rysunek od " + sender.getName());
+        System.out.println("Otrzymano rysunek od " + sender.getName());
 
         if (drawingsSubmitted == expectedPlayerCount) {
             broadcast("START_GUESSING");
@@ -123,7 +122,6 @@ public class CharadesGame extends Game {
         int totalGuessesNeeded = expectedPlayerCount * (expectedPlayerCount - 1);
         if (guessedMap.size() >= totalGuessesNeeded) {
             if (currentRound < totalRounds) {
-                broadcast("Server: Wszyscy gracze zakończyli zgadywanie w tej turze!");
                 resetGameState();
                 currentRound++;
                 sendWordsForCurrentRound();

@@ -134,6 +134,10 @@ public class GameClient {
             Platform.runLater(() -> {
                 memoryController.setNick(message);
             });
+        } else if (message.startsWith("Gra zakończona! ")) {
+            Platform.runLater(() -> {
+                memoryController.endGame(message);
+            });
         }
     }
 }
