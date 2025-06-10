@@ -53,20 +53,31 @@ public class CharadesGame extends Game {
 
     @Override
     public void endGame() {
-        StringBuilder summary = new StringBuilder("Gra zakończona. Gracze: ");
+        int maxScore = -1;
+        List<Player> winners = new ArrayList<>();
+
         for (Player p : players) {
-            summary.append(p.getName()).append(" ");
+            int score = p.getScore();
+            if (score > maxScore) {
+                maxScore = score;
+                winners.clear();
+                winners.add(p);
+            } else if (score == maxScore) {
+                winners.add(p);
+            }
         }
 
-        ReportWriter.logGameResult("Wszyscy zakończyli zgadywanie", summary.toString(), "");
-        broadcast("Gra w Kalambury zakończona!");
+        String winnerName;
+        if (winners.size() == 1) {
+            winnerName = winners.get(0).getName();
+        } else {
+            winnerName = "Remis";
+        }
 
-        resetGameState();
-
-        drawingsSubmitted = 0;
-        Arrays.fill(drawings, null);
-        guessedMap.clear();
+        ReportWriter.logGameResult(winnerName, players.get(0).getName(), players.get(1).getName()); // tylko 2 graczy? Zmień jeśli więcej!
+        broadcast("Charades Game Over Winner: " + winnerName);
     }
+
 
     private void processSentDrawing(int playerId, String base64) {
         drawings[playerId] = base64;
@@ -111,12 +122,7 @@ public class CharadesGame extends Game {
 
         if (expectedWord != null && isCorrectGuess(expectedWord, guessText)) {
             guesser.addScore(1);
-            target.addScore(1);
-
-            guesser.sendMessage("RESULT: Poprawnie! Hasło gracza " + targetSenderName + ": " + expectedWord);
             sendScoresToAll();
-        } else {
-            guesser.sendMessage("RESULT: Niepoprawnie! Spróbuj dalej.");
         }
 
         int totalGuessesNeeded = expectedPlayerCount * (expectedPlayerCount - 1);
@@ -197,11 +203,13 @@ public class CharadesGame extends Game {
     }
 
     private void sendNicknames() {
-        StringBuilder sb = new StringBuilder("NICKICH:");
+        StringBuilder sb = new StringBuilder("Charades NICKI:");
         for (Player p : players) {
             sb.append(p.getName()).append(",");
         }
         broadcast(sb.toString());
     }
+
+
 
 }

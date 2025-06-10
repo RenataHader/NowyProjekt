@@ -30,9 +30,9 @@
 
         <!-- 🔼 GÓRA – hasło i czas -->
         <top>
-            <StackPane prefHeight="100" style="-fx-padding: 40 30 0 20;">
+            <StackPane prefHeight="50" style="-fx-padding: 40 30 0 20;">
                 <Label fx:id="wordLabel" text="Oczekiwanie na pozostałych graczy"
-                       style="-fx-text-fill: white; -fx-font-size: 40px; -fx-font-weight: bold;"
+                       style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;"
                        StackPane.alignment="CENTER" />
 
                 <Label fx:id="timerLabel" text="Czas: 60s"

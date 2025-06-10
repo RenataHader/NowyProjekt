@@ -102,9 +102,6 @@ public class CharadesDrawController implements GameGUIController{
             e.printStackTrace();
         }
         sendDrawingButton.setDisable(true);
-        if (countdownTimeline != null) {
-            countdownTimeline.stop();
-        }
     }
 
     public void prepareNewRound() {
@@ -213,7 +210,9 @@ public class CharadesDrawController implements GameGUIController{
     }
 
     public void setScore(String data) {
-        scorePanel.getChildren().removeIf(node -> node instanceof Label && ((Label) node).getText().contains(":"));
+        while (scorePanel.getChildren().size() > 2) {
+            scorePanel.getChildren().remove(2);
+        }
 
         String[] entries = data.split(",");
         for (String entry : entries) {
@@ -230,8 +229,11 @@ public class CharadesDrawController implements GameGUIController{
             }
         }
     }
+
     public void setNick(String data) {
-        scorePanel.getChildren().removeIf(node -> node instanceof Label && ((Label) node).getText().contains(":"));
+        while (scorePanel.getChildren().size() > 2) {
+            scorePanel.getChildren().remove(2);
+        }
 
         String[] nicki = data.split(",");
         for (String nick : nicki) {
@@ -242,4 +244,5 @@ public class CharadesDrawController implements GameGUIController{
             }
         }
     }
+
 }

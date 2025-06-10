@@ -18,7 +18,7 @@ public class GameServer {
         try {
             NetworkConfigReader config = new NetworkConfigReader();
             int port = config.getPort();
-            System.out.println("Serwer działa na porcie " + port);
+            System.out.println("Serwer dziala na porcie " + port);
 
             try (ServerSocket serverSocket = new ServerSocket(port)) {
                 while (true) {

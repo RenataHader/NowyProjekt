@@ -37,8 +37,8 @@ public class MemoryGame extends Game {
         broadcast("START:MEMORY");
         String nick1 = players.get(0).getName();
         String nick2 = players.get(1).getName();
-        broadcast("NICKI:" + nick1 + "," + nick2);
-        broadcast("Tura gracza " + nick1);
+        broadcast("Memory NICKI:" + nick1 + "," + nick2);
+        broadcast("Player's turn " + nick1);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class MemoryGame extends Game {
         if (moveData.equals("TIMEOUT")) {
             currentPlayer = 1 - currentPlayer;
             Player current = players.get(currentPlayer);
-            broadcast("Tura gracza " + current.getName());
+            broadcast("Player's turn " + current.getName());
             return;
         }
 
@@ -78,7 +78,7 @@ public class MemoryGame extends Game {
                 card2.setMatched(true);
                 player.addScore(1);
                 broadcast("MATCH:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
-                broadcast("Wynik - " +
+                broadcast("Score - " +
                         players.get(0).getName() + ": " + players.get(0).getScore() + " " +
                         players.get(1).getName() + ": " + players.get(1).getScore());
 
@@ -96,7 +96,7 @@ public class MemoryGame extends Game {
                 broadcast("HIDE:" + flippedPositions.get(0) + "|" + flippedPositions.get(1));
                 currentPlayer = 1 - currentPlayer;
                 Player current = players.get(currentPlayer);
-                broadcast("Tura gracza " + current.getName());
+                broadcast("Player's turn " + current.getName());
             }
             flippedPositions.clear();
         }
@@ -116,7 +116,7 @@ public class MemoryGame extends Game {
             winnerName = "Remis";
         }
         ReportWriter.logGameResult(winnerName,p1.getName(), p2.getName());
-        broadcast("Gra zakończona! Zwycięzca: " + winnerName);
+        broadcast("Memory Game Over Winner: " + winnerName);
     }
 
     private boolean isGameFinished() {

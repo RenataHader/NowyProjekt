@@ -69,7 +69,7 @@ public class CharadesGuessController implements GameGUIController{
                 startTurnTimer();
             }
         } else {
-            resultLabel.setText("Wszystkie rysunki odgadniete! 🎉");
+            resultLabel.setText("Czekaj na reszte graczy");
             drawingImage.setImage(null);
             selectedSender = null;
 
@@ -84,10 +84,6 @@ public class CharadesGuessController implements GameGUIController{
         if (selectedSender == null || guessField.getText().isEmpty()) {
             resultLabel.setText("Wpisz odpowiedź.");
             return;
-        }
-
-        if (countdownTimeline != null) {
-            countdownTimeline.stop();
         }
 
         String guess = guessField.getText().trim();
@@ -140,7 +136,9 @@ public class CharadesGuessController implements GameGUIController{
     }
 
     public void setScore(String data) {
-        scorePanel.getChildren().removeIf(node -> node instanceof Label && ((Label) node).getText().contains(":"));
+        while (scorePanel.getChildren().size() > 2) {
+            scorePanel.getChildren().remove(2);
+        }
 
         String[] entries = data.split(",");
         for (String entry : entries) {
@@ -157,8 +155,11 @@ public class CharadesGuessController implements GameGUIController{
             }
         }
     }
+
     public void setNick(String data) {
-        scorePanel.getChildren().removeIf(node -> node instanceof Label && ((Label) node).getText().contains(":"));
+        while (scorePanel.getChildren().size() > 2) {
+            scorePanel.getChildren().remove(2);
+        }
 
         String[] nicki = data.split(",");
         for (String nick : nicki) {
@@ -167,6 +168,20 @@ public class CharadesGuessController implements GameGUIController{
                 label.setStyle("-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;");
                 scorePanel.getChildren().add(label);
             }
+        }
+    }
+
+
+    public void endGame(String message) {
+        if (message.startsWith("Charades Game Over Winner: ")) {
+            String winnerName = message.substring("Charades Game Over Winner: ".length()).trim();
+
+            Platform.runLater(() -> {
+                ViewManager manager = ViewManager.getInstance();
+                EndGameController endGameController = manager.getController("endGame", EndGameController.class);
+                endGameController.setWinnerName(winnerName);
+                manager.changeView("endGame");
+            });
         }
     }
 }

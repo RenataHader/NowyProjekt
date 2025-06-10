@@ -27,10 +27,10 @@
     <BorderPane style="-fx-background-color: transparent; ">
 
         <top>
-            <StackPane prefHeight="100" style="-fx-padding: 20 30 0 20;">
+            <StackPane prefHeight="50" style="-fx-padding: 20 30 0 20;">
                 <Label fx:id="resultLabel"
                        text="Zgadnij rysunek gracza:"
-                       style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;"
+                       style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;"
                        StackPane.alignment="CENTER"/>
 
                 <Label fx:id="timerLabel"
@@ -54,10 +54,7 @@
 
         <!-- Centrum - Obraz i zgadywanie -->
         <center>
-            <VBox alignment="CENTER"
-                  spacing="20"
-                  style="-fx-padding: 60;">
-
+            <VBox alignment="CENTER" spacing="20" style="-fx-padding: 60;">
                 <ImageView fx:id="drawingImage"
                            fitWidth="800"
                            fitHeight="500"
@@ -67,15 +64,19 @@
                 <Label text="Twoja odpowiedź:"
                        style="-fx-text-fill: white; -fx-font-size: 20px;" />
 
-                <TextField fx:id="guessField"
-                           prefWidth="300"
-                           style="-fx-font-size: 16px;" />
+                <!-- ⬇️ NOWY kontener z ograniczoną szerokością -->
+                <VBox maxWidth="300" spacing="10" alignment="CENTER">
+                    <TextField fx:id="guessField"
+                               style="-fx-font-size: 16px;"
+                               maxWidth="300" />
 
-                <Button text="Zgadnij"
-                        onAction="#submitGuess"
-                        minWidth="150"
-                        style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                    <Button text="Zgadnij"
+                            onAction="#submitGuess"
+                            minWidth="150"
+                            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                </VBox>
             </VBox>
         </center>
+
     </BorderPane>
 </StackPane>

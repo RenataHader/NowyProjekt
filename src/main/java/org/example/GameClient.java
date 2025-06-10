@@ -100,7 +100,7 @@ public class GameClient {
                     guessController.setScore(scoreData);
                 }
             });
-        } else if (message.startsWith("NICKICH:")) {
+        } else if (message.startsWith("Charades NICKI:")) {
             String data = message.substring(8);
             Platform.runLater(() -> {
                 if (drawController != null) {
@@ -109,6 +109,10 @@ public class GameClient {
                 if (guessController != null) {
                     guessController.setNick(data);
                 }
+            });
+        } else if (message.startsWith("Charades Game Over Winner: ")) {
+            Platform.runLater(() -> {
+                guessController.endGame(message);
             });
         } else if (message.startsWith("UPDATE:")) {
             Platform.runLater(() -> {
@@ -122,19 +126,19 @@ public class GameClient {
             Platform.runLater(() -> {
                 memoryController.backCard(message);
             });
-        } else if (message.startsWith("Wynik - ")) {
+        } else if (message.startsWith("Score - ")) {
             Platform.runLater(() -> {
                 memoryController.setScore(message);
             });
-        } else if (message.startsWith("Tura gracza ")) {
+        } else if (message.startsWith("Player's turn ")) {
             Platform.runLater(() -> {
                 memoryController.setServer(message);
             });
-        } else if (message.startsWith("NICKI:")) {
+        } else if (message.startsWith("Memory NICKI:")) {
             Platform.runLater(() -> {
                 memoryController.setNick(message);
             });
-        } else if (message.startsWith("Gra zakończona! ")) {
+        } else if (message.startsWith("Memory Game Over Winner: ")) {
             Platform.runLater(() -> {
                 memoryController.endGame(message);
             });

@@ -153,7 +153,7 @@ public class MemoryController {
 
 
     public void setScore(String msg) {
-        msg = msg.replace("Wynik - ", "").trim();
+        msg = msg.replace("Score - ", "").trim();
 
         String[] parts = msg.split(" ");
 
@@ -171,8 +171,8 @@ public class MemoryController {
 
     public void setServer(String msg) {
 
-        if (msg.startsWith("Tura gracza ")) {
-            String playerName = msg.substring("Tura gracza ".length()).trim();
+        if (msg.startsWith("Player's turn ")) {
+            String playerName = msg.substring("Player's turn ".length()).trim();
             updateTurn(playerName);
             startTurnTimer();
         }
@@ -180,8 +180,8 @@ public class MemoryController {
     }
 
     public void endGame(String msg) {
-        if (msg.startsWith("Gra zakończona! Zwycięzca: ")) {
-            String winnerName = msg.substring("Gra zakończona! Zwycięzca: ".length()).trim();
+        if (msg.startsWith("Memory Game Over Winner: ")) {
+            String winnerName = msg.substring("Memory Game Over Winner: ".length()).trim();
             showEndGameDialog(winnerName);
         }
     }
@@ -205,8 +205,8 @@ public class MemoryController {
     }
 
     public void setNick(String msg) {
-        if (msg.startsWith("NICKI:")) {
-            String[] names = msg.substring(6).split(",");
+        if (msg.startsWith("Memory NICKI:")) {
+            String[] names = msg.substring(13).split(",");
             if (names.length == 2) {
                 player1Name = names[0];
                 player2Name = names[1];
