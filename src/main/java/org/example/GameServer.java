@@ -28,7 +28,7 @@ public class GameServer {
 
                     ClientHandler handler = new ClientHandler(socket, player);
                     handlers.add(handler);
-                    pool.execute(handler);
+                    Future<Void> future = pool.submit(handler);
                     System.out.println("Nowy gracz połączony: " + "Anonim");
                 }
             } catch (IOException e) {

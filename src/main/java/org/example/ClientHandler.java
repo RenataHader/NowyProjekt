@@ -3,8 +3,10 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.SocketException;
+import java.util.concurrent.Callable;
 
-public class ClientHandler implements Runnable {
+public class ClientHandler implements Callable<Void> {
 
     private final Socket socket;
     private final Player player;
@@ -15,7 +17,7 @@ public class ClientHandler implements Runnable {
     }
 
     @Override
-    public void run() {
+    public Void call() {
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(socket.getInputStream()))) {
 
@@ -49,9 +51,19 @@ public class ClientHandler implements Runnable {
                 }
             }
 
+        } catch (SocketException e) {
+            System.out.println("Gracz '" + player.getName() + "' rozlaczyl sie.");
         } catch (Exception e) {
+            System.err.println("Blad podczas obsługi gracza: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            try {
+                socket.close();
+            } catch (Exception ex) {
+                System.err.println("Blad przy zamykaniu socketu: " + ex.getMessage());
+            }
         }
-    }
 
+        return null;
+    }
 }
