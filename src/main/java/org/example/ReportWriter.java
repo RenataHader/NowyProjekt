@@ -19,8 +19,8 @@ public class ReportWriter {
         writeLine("Gracz " + playerName + " dołączył do gry: " + gameType);
     }
 
-    public static void logGameResult(String winner, String player1, String player2) {
-        writeLine("Zwycięzca: " + winner + " | Przeciwnik: " + (winner.equals(player1) ? player2 : player1));
+    public static void logGameResult(String winner, String playersCsv) {
+        writeLine("Wynik gry — zwycięzca: " + winner + ", gracze: " + playersCsv);
     }
 
     private static void writeLine(String line) {

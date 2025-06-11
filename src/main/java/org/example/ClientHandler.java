@@ -29,7 +29,14 @@ public class ClientHandler implements Callable<Void> {
                     if (!nick.isEmpty()) {
                         player.setName(nick);
                         ReportWriter.logPlayerCreated(nick);
-                        System.out.println("Gracz ustawił nick: " + nick);
+                    }
+
+                    try {
+                        GameResultRepository repo = new GameResultRepository();
+                        int playerId = repo.ensurePlayer(nick);
+                        player.setId(playerId); // ⬅️ zapamiętaj ID gracza
+                    } catch (Exception e) {
+                        System.err.println("Błąd przy zapisie gracza do bazy: " + e.getMessage());
                     }
                     continue;
                 }

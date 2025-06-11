@@ -5,15 +5,19 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class Game {
-    protected final String gameId = UUID.randomUUID().toString();
+    protected int gameDatabaseId;
     protected final List<Player> players = new ArrayList<>();
 
     public void addPlayer(Player player) {
         players.add(player);
     }
 
-    public String getGameId() {
-        return gameId;
+    public void setGameDatabaseId(int id) {
+        this.gameDatabaseId = id;
+    }
+
+    public int getGameDatabaseId() {
+        return gameDatabaseId;
     }
 
     public List<Player> getPlayers() {

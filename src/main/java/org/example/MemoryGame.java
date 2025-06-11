@@ -115,8 +115,30 @@ public class MemoryGame extends Game {
         } else {
             winnerName = "Remis";
         }
-        ReportWriter.logGameResult(winnerName,p1.getName(), p2.getName());
+
+        List<String> nicknames = players.stream()
+                .map(Player::getName)
+                .toList();
+
+        ReportWriter.logGameResult(winnerName, String.join(",", nicknames));
+
         broadcast("Memory Game Over Winner: " + winnerName);
+
+
+        try {
+            GameResultRepository repo = new GameResultRepository();
+
+            boolean isDraw = winnerName.equals("Remis");
+
+            for (Player p : players) {
+                int playerId = p.getId();
+                boolean isWinner = !isDraw && p.getName().equals(winnerName);
+                repo.insertResult(gameDatabaseId, playerId, p.getScore(), isWinner);
+            }
+
+        } catch (Exception e) {
+            System.err.println("Błąd zapisu wyników do bazy: " + e.getMessage());
+        }
     }
 
     private boolean isGameFinished() {

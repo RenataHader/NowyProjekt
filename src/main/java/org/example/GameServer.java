@@ -16,6 +16,7 @@ public class GameServer {
 
     public static void main(String[] args) {
         try {
+            DatabaseInitializer.initialize();
             NetworkConfigReader config = new NetworkConfigReader();
             int port = config.getPort();
             System.out.println("Serwer dziala na porcie " + port);
@@ -66,12 +67,24 @@ public class GameServer {
                 }
             }
 
+            int gameId = -1;
+            try {
+                GameResultRepository repo = new GameResultRepository();
+                gameId = repo.insertGame(gameType.toUpperCase());
+            } catch (Exception e) {
+                System.err.println("Błąd zapisu gry do bazy: " + e.getMessage());
+            }
+
             // brak dostępnych pokoi – twórz nowy
             Game game = switch (gameType.toUpperCase()) {
                 case "MEMORY" -> new MemoryGame();
                 case "CHARADES" -> new CharadesGame(playerCount);
                 default -> throw new IllegalArgumentException("Nieznany typ gry: " + gameType);
             };
+
+            if (gameId != -1) {
+                game.setGameDatabaseId(gameId);
+            }
 
             GameRoom newRoom = new GameRoom(game, playerCount);
             newRoom.addPlayer(player);

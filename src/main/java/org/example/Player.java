@@ -7,6 +7,7 @@ public class Player {
     private String name;
     private final Socket socket;
     private final PrintWriter out;
+    private int id;
 
 
     private int score = 0;
@@ -19,6 +20,14 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setName(String name) {

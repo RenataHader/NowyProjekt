@@ -11,6 +11,7 @@ dependencies {
     implementation 'org.openjfx:javafx-controls:21'
     implementation 'org.openjfx:javafx-fxml:21'
     implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
+    implementation 'com.mysql:mysql-connector-j:8.0.33'
 }
 
 javafx {

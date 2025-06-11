@@ -74,8 +74,27 @@ public class CharadesGame extends Game {
             winnerName = "Remis";
         }
 
-        ReportWriter.logGameResult(winnerName, players.get(0).getName(), players.get(1).getName()); // tylko 2 graczy? Zmień jeśli więcej!
+        List<String> nicknames = players.stream()
+                .map(Player::getName)
+                .toList();
+
+        ReportWriter.logGameResult(winnerName, String.join(",", nicknames));
+
         broadcast("Charades Game Over Winner: " + winnerName);
+
+        try {
+            GameResultRepository repo = new GameResultRepository();
+
+            for (Player p : players) {
+                int playerId = p.getId();
+                boolean isWinner = (winners.size() == 1 && p.getName().equals(winnerName));
+                repo.insertResult(gameDatabaseId, playerId, p.getScore(), isWinner);
+            }
+
+        } catch (Exception e) {
+            System.err.println("Błąd zapisu wyników do bazy: " + e.getMessage());
+        }
+
     }
 
 
