@@ -23,7 +23,7 @@
         <top>
             <StackPane prefHeight="100" style="-fx-padding: 20 30 0 30;">
 
-                <!-- Napis tury idealnie na środku -->
+                <!-- Napis tury na środku -->
                 <Label fx:id="turnLabel" text="Oczekiwanie na drugiego gracza"
                        style="-fx-text-fill: white; -fx-font-size: 35px; -fx-font-weight: bold;" />
 

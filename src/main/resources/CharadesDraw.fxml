@@ -14,7 +14,7 @@
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="org.example.CharadesDrawController">
 
-    <!-- 🔁 TŁO jako ImageView z grafiką -->
+    <!-- Tło -->
     <ImageView fx:id="backgroundImage"
                pickOnBounds="true"
                preserveRatio="false"
@@ -25,10 +25,10 @@
     </ImageView>
 
 
-    <!-- 🧠 Główna struktura gry -->
+    <!-- Główna struktura gry -->
     <BorderPane fx:id="mainLayout" style="-fx-background-color: transparent;">
 
-        <!-- 🔼 GÓRA – hasło i czas -->
+        <!-- GÓRA – hasło i czas -->
         <top>
             <StackPane prefHeight="50" style="-fx-padding: 40 30 0 20;">
                 <Label fx:id="wordLabel" text="Oczekiwanie na pozostałych graczy"
@@ -41,7 +41,7 @@
             </StackPane>
         </top>
 
-        <!-- ⬅️ Lewy panel – wyniki -->
+        <!-- Lewy panel – wyniki -->
         <left>
             <VBox fx:id="scorePanel"
                   prefWidth="200"
@@ -54,7 +54,7 @@
             </VBox>
         </left>
 
-        <!-- ➡️ Prawy panel – narzędzia -->
+        <!-- Prawy panel – narzędzia -->
         <right>
             <VBox spacing="10"
                   alignment="TOP_CENTER"
@@ -102,7 +102,7 @@
 
                 <Region VBox.vgrow="ALWAYS"/>
 
-                <!-- 🔁 Przyciski -->
+                <!-- Przyciski -->
                 <Button fx:id="sendDrawingButton" text="Wyślij"
                         onAction="#sendDrawing"
                         prefWidth="150"
@@ -112,7 +112,7 @@
             </VBox>
         </right>
 
-        <!-- 🎨 Centrum – rysunek -->
+        <!-- Centrum – rysunek -->
         <center>
             <VBox alignment="CENTER"
                   style="-fx-padding: 100;">

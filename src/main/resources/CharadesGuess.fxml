@@ -12,7 +12,7 @@
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="org.example.CharadesGuessController">
 
-    <!-- Tło opcjonalne (można usunąć jeśli niepotrzebne) -->
+    <!-- Tło -->
     <ImageView fx:id="backgroundImage"
                preserveRatio="false"
                pickOnBounds="true"
@@ -64,7 +64,6 @@
                 <Label text="Twoja odpowiedź:"
                        style="-fx-text-fill: white; -fx-font-size: 20px;" />
 
-                <!-- ⬇️ NOWY kontener z ograniczoną szerokością -->
                 <VBox maxWidth="300" spacing="10" alignment="CENTER">
                     <TextField fx:id="guessField"
                                style="-fx-font-size: 16px;"

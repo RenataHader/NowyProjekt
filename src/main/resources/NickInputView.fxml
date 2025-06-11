@@ -36,7 +36,7 @@
                              -fx-background-radius: 5;"/>
         </VBox>
 
-        <!-- Wybór liczby graczy (widoczne tylko dla Charades) -->
+        <!-- Wybór liczby graczy -->
         <VBox fx:id="playerCountContainer" alignment="CENTER" spacing="5">
             <Label fx:id="playerLabel" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
             <TextField fx:id="playerCountField"
@@ -49,7 +49,7 @@
                              -fx-background-radius: 5;"/>
         </VBox>
 
-        <!-- Przycisk Dołącz i Powrót obok siebie -->
+        <!-- Przycisk Dołącz i Powrót -->
         <HBox alignment="CENTER" spacing="20">
             <Button text="Dołącz do gry"
                     onAction="#handleSubmit"
