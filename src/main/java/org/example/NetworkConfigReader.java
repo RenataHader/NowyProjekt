@@ -3,6 +3,7 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class NetworkConfigReader {
     private String ip;
@@ -13,7 +14,8 @@ public class NetworkConfigReader {
     }
 
     private void readConfig() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("network_config.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                NetworkConfigReader.class.getClassLoader().getResourceAsStream("network_config.txt")))) {
             ip = reader.readLine();
             port = Integer.parseInt(reader.readLine());
         } catch (IOException e) {

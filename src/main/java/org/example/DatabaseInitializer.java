@@ -38,7 +38,7 @@ public class DatabaseInitializer {
     }
 
     private static void loadConfiguration() {
-        try (InputStream input = new FileInputStream(CONFIG_PATH)) {
+        try (InputStream input = DatabaseInitializer.class.getClassLoader().getResourceAsStream(CONFIG_PATH)) {
             Properties props = new Properties();
             props.load(input);
 
