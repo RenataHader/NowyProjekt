@@ -33,7 +33,6 @@ public class CharadesGuessController implements GameGUIController{
 
     @FXML
     public void initialize() {
-        // Bind background image to full window
         Platform.runLater(() -> {
             backgroundImage.fitWidthProperty().bind(backgroundImage.getScene().widthProperty());
             backgroundImage.fitHeightProperty().bind(backgroundImage.getScene().heightProperty());
@@ -50,7 +49,6 @@ public class CharadesGuessController implements GameGUIController{
                 base64Map.put(sender, base64);
                 senderOrder.add(sender);
 
-                // Pierwszy rysunek? Pokaż od razu
                 if (senderOrder.size() == 1) {
                     showCurrentPicture();
                 }
@@ -127,7 +125,6 @@ public class CharadesGuessController implements GameGUIController{
     private void autoSkipGuess() {
         if (selectedSender == null) return;
 
-        // Możesz wysłać info o pominięciu, albo nie — zależnie od potrzeb
         client.sendMessage("GUESS:" + selectedSender + ":BRAK");
 
         guessField.clear();

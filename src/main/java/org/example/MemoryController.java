@@ -57,7 +57,6 @@ public class MemoryController implements GameGUIController{
                 imageView.setPreserveRatio(true);
                 imageView.setSmooth(false);
 
-                // Przezroczysty przycisk nad obrazkiem
                 Button invisibleButton = new Button();
                 invisibleButton.setOpacity(0);
                 invisibleButton.setPrefSize(CARD_WIDTH, CARD_HEIGHT);

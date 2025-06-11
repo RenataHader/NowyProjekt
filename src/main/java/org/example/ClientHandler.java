@@ -34,7 +34,7 @@ public class ClientHandler implements Callable<Void> {
                     try {
                         GameResultRepository repo = new GameResultRepository();
                         int playerId = repo.ensurePlayer(nick);
-                        player.setId(playerId); // ⬅️ zapamiętaj ID gracza
+                        player.setId(playerId); // zapamiętaj ID gracza
                     } catch (Exception e) {
                         System.err.println("Błąd przy zapisie gracza do bazy: " + e.getMessage());
                     }

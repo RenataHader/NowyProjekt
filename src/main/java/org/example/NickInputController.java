@@ -11,7 +11,7 @@ public class NickInputController {
     @FXML private TextField nicknameField;
     @FXML private TextField playerCountField;
 
-    private String selectedGame; // MEMORY / CHARADES
+    private String selectedGame;
 
     public void setSelectedGame(String selectedGame) {
         this.selectedGame = selectedGame;
@@ -31,7 +31,7 @@ public class NickInputController {
     @FXML
     public void handleBack(ActionEvent event) {
         ViewManager manager = ViewManager.getInstance();
-        manager.changeView("main"); // Uwaga: klucz musi pasować do tego w ViewManager!
+        manager.changeView("main");
     }
 
     @FXML
