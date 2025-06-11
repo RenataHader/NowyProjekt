@@ -13,7 +13,7 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 
-public class MemoryController {
+public class MemoryController implements GameGUIController{
     @FXML
     private GridPane gameGrid;
     @FXML
@@ -206,7 +206,7 @@ public class MemoryController {
         }
     }
 
-    private void startTurnTimer() {
+    public void startTurnTimer() {
         if (turnTimer != null) {
             turnTimer.stop();
         }
